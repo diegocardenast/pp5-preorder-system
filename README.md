@@ -1,77 +1,120 @@
 <p align="center">
-  <img width="500" height="100" src="https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/plastilecorLogo.jpg" alt="PlastilecorLogo">
+  <img width="500" height="100" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.jpg" alt="HofpfistereiLogo">
 </p>
 
 # Bread Preorder System
 
 The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usually, customers need to call in order to make a bread preorder. The idea of this project is to offer an **online platform** where **customers can create their preorders without waiting** for someone to answer the phone in one of the selling points. The platform will be created using React and REST Framework
 
-![Responsive Mockup](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/am-i-responsive.png)
+![Responsive Mockup](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/am-i-responsive.png)
 
 ## User Experience
 
 ### User Stories
-- As a **user** I want to **login into the portal** so that I can **see the updated price list of products**
-- As a **user** I want to **logout from the portal** so that I can **keep my user credentials safe**
-- As a **user** I want to **register in the portal** so that I can **have my own user access**
-- As a **user** I want to **have a landing page with a link to the products list** so that I can **always watch the most updated version of the list**
-- As a **user** I want to **have a landing page with a link to the the contact form** so that I can **contact plastilecor support in case of any doubt**
-- As a **user** I want to **have a landing page with a link to the official Plastilecor website** so that I can **check more information of the company if I need to**
-- As an **admin user** I want to **login into the portal** so that I can **CRUD user accounts and price list of products**
-- As an **admin user** I want to **logout from the portal** so that I can **keep users credentials and the product list safe**
-- As an **admin user** I want to **CRUD user accounts** so that I can **make sure who has access into the portal**
-- As an **admin user** I want to **CRUD the product list inside the website** so that I can **make sure we always have the most updated version inside the portal**
-- As an **admin user and user** I want to **check the documentation of the website** so that I can **better understand the functionalities, quality and features of it**
+
+#### As a Customer
+
+##### User Registration and Login
+- As a **customer**, I want to create an account so that I can log in and place preorders.
+- As a **customer**, I want to log in to my account so that I can access my preorder history and place new preorders.
+
+##### Browsing Bread Products
+- As a **customer**, I want to browse a list of bread products so that I can choose which bread to preorder.
+- As a **customer**, I want to see pictures of each bread product so that I can make an informed decision.
+
+##### Placing a Preorder
+- As a **customer**, I want to select a bread product to preorder so that I can place an order for future pickup.
+- As a **customer**, I want to specify whether I want my bread sliced or unsliced so that my bread is prepared to my preference.
+- As a **customer**, I want to choose the quantity of bread (quarter, half, three-quarters, or whole) so that I can order the amount I need.
+- As a **customer**, I want to select the date for pickup from one week ahead up to two days before so that I can plan my preorder in advance.
+
+##### Managing Preorders
+- As a **customer**, I want to view my preorder history so that I can keep track of my previous orders.
+- As a **customer**, I want to cancel or modify my preorder up to two days before the pickup date so that I have flexibility with my order.
+
+#### As an Admin
+
+##### Admin Authentication
+- As an **admin**, I want to log in to the admin panel so that I can manage the bread preorder system.
+
+##### Managing Bread Products
+- As an **admin**, I want to create new bread products so that customers can preorder them.
+- As an **admin**, I want to update existing bread products so that I can keep the product information current.
+- As an **admin**, I want to delete bread products so that I can remove products that are no longer available.
+- As an **admin**, I want to view a list of all bread products so that I can manage them effectively.
+
+##### Managing Preorders
+- As an **admin**, I want to view all preorders so that I can ensure they are fulfilled correctly.
+- As an **admin**, I want to update the status of preorders so that customers are informed about their order status.
+
+### Functional Requirements
+
+#### User Registration and Authentication
+- Implement user registration and login functionality using REST framework for backend authentication.
+- Use React for the frontend to create forms for registration and login.
+
+#### Bread Product Management
+- Implement CRUD (Create, Read, Update, Delete) operations for bread products in the backend using REST framework.
+- Use React to create an admin interface for managing bread products.
+- Include image upload functionality for bread products.
+
+#### Preorder Functionality
+- Implement preorder creation and management using REST framework.
+- Use React to create a user-friendly interface for browsing products, placing preorders, and managing preorder history.
+
+#### Date Selection
+- Ensure the date picker in the React frontend allows users to select a pickup date from one week ahead up to two days before the desired date.
+
+#### Order Preferences
+- Provide options for customers to specify if they want their bread sliced or unsliced and to choose the quantity (quarter, half, three-quarters, or whole).
 
 
 ### Tasks and Planning
 
-Tasks and planning can be seen in the [Plastilecor Price List Portal - GitHub Project](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal).
+Tasks and planning can be seen in the [Bread Preorder System - GitHub Project](https://github.com/users/diegocardenast/projects/7).
 
 ### Colour
 
-The colour selection was generated from the company logo: [Plastilecor logo](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/plastilecorLogo.jpg). The main HEX code is [#004F1F](https://g.co/kgs/ZfFH1aA).
+The colour selection was generated from the company website: [Hofpfisterei website](https://www.hofpfisterei.de/). The main HEX code is [#004F1F](https://g.co/kgs/E5BdCuk).
 
 ## Database Model
 
-![Database Model](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/drawSQL-pp4.png)
+![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQL-pp5.png)
 
 ## Wireframes
 
 __Login__  
 
-![Login](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/login-wireframe.png)
+![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/login-wireframe.png)
 
 __Home__  
 
-![Home](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/home-wireframe.png)
+![Home](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/home-wireframe.png)
 
-__Price List__  
+__Bread Order__  
 
-![PriceList](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/price-list-wireframe.png)
+![PriceList](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/price-list-wireframe.png)
 
 
 ## Features
 
 __Register__
 
-![Register](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/register-feature.png)
+![Register](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/register-feature.png)
 
 __Contact Us__
 
-![ContactUs](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/Contact-us-feature.png)
+![ContactUs](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/Contact-us-feature.png)
 
-__Price List Details__
+__Preorder Details__ 
 
-  - The time counter, the name of the schenario, pumpkins (lives) counter and how many ghosts you have hunt are part of the visual tools for the user/player. 
-
-![PriceListDetails](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/price-list-details-feature.png)
+![PriceListDetails](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/price-list-details-feature.png)
 
 __CRUD Functionality__ 
 
-![AddProduct](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/AddProduct.png)
+![AddProduct](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/AddProduct.png)
 
-![EditDeleteProduct](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/EditDeleteProduct.png)
+![EditDeleteProduct](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/EditDeleteProduct.png)
 
 
 ## Testing
@@ -86,7 +129,7 @@ __CRUD Functionality__
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
 - Lighthouse
   - The result given by the system for the lighthouse assessment is the following:
-![Lighthouse results](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/lighthouse-test.png)
+![Lighthouse results](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/lighthouse-test.png)
 
 ### Manual Testing
 **TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
@@ -134,7 +177,7 @@ Price list | Visualize a product detail page as a normal user | interface will r
   - Inside the Heroku app deploy tab, click on deploy branch
   - Click on View App
 
-The live link can be found [HERE](https://plastilecor-portal-pp4-b72037813267.herokuapp.com/)
+The live link can be found [HERE]()
 
 --- 
 
@@ -143,10 +186,9 @@ The live link can be found [HERE](https://plastilecor-portal-pp4-b72037813267.he
 ### Content 
 
 - Good/Best practice on the readme were shared by Lauren-Nicole Popich in her [mentoring](https://github.com/CluelessBiker/mentoring/tree/main) GitHub repositry
-- CRUD functionality support found in the videos of [Dee Mc YouTube channel](https://www.youtube.com/@IonaFrisbee)
 - User Stories and tasks creation was implemented following this [publication](https://boosthigh.com/software-requirements-specification/)
 - Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
-- Inspiration of the [institutional color](https://www.plastilecor.com/)
+- Inspiration of the [institutional color](https://www.hofpfisterei.de/)
 - The use of GitHub to collaborate and apply good practices was implemented following this [Slack post](https://code-institute-room.slack.com/archives/C05UQAPDNCT/p1697457705802579) and this [GitHub post](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md)
 
 ### Media
@@ -160,3 +202,25 @@ The live link can be found [HERE](https://plastilecor-portal-pp4-b72037813267.he
 Thank You!
 
 Diego Cárdenas 
+
+# README REQUIREMENTS :
+
+- [README formatter](https://stackedit.io/app#) : very useful tool
+
+## ALL READMES :
+- [ ] All deployment steps (cloning repo | git add/commit/push | deploy to github pages)
+- [ ] Pass README through a spell checker!
+
+## PP5 - ADVFE :
+
+### BACKEND :
+- [ ] All deployment steps
+- [ ] Thoroughly document manual testing
+- [ ] Data schema
+
+### FRONTEND :
+- [ ] All deployment steps
+- [ ] Document reuse of React components to demonstrate understanding
+- [ ] Thoroughly document manual testing
+
+--- 
