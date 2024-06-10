@@ -1,114 +1,162 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<p align="center">
+  <img width="500" height="100" src="https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/plastilecorLogo.jpg" alt="PlastilecorLogo">
+</p>
 
-Welcome USER_NAME,
+# Bread Preorder System
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usually, customers need to call in order to make a bread preorder. The idea of this project is to offer an **online platform** where **customers can create their preorders without waiting** for someone to answer the phone in one of the selling points. The platform will be created using React and REST Framework
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 28, 2024**
+![Responsive Mockup](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/am-i-responsive.png)
 
-## Gitpod Reminders
+## User Experience
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User Stories
+- As a **user** I want to **login into the portal** so that I can **see the updated price list of products**
+- As a **user** I want to **logout from the portal** so that I can **keep my user credentials safe**
+- As a **user** I want to **register in the portal** so that I can **have my own user access**
+- As a **user** I want to **have a landing page with a link to the products list** so that I can **always watch the most updated version of the list**
+- As a **user** I want to **have a landing page with a link to the the contact form** so that I can **contact plastilecor support in case of any doubt**
+- As a **user** I want to **have a landing page with a link to the official Plastilecor website** so that I can **check more information of the company if I need to**
+- As an **admin user** I want to **login into the portal** so that I can **CRUD user accounts and price list of products**
+- As an **admin user** I want to **logout from the portal** so that I can **keep users credentials and the product list safe**
+- As an **admin user** I want to **CRUD user accounts** so that I can **make sure who has access into the portal**
+- As an **admin user** I want to **CRUD the product list inside the website** so that I can **make sure we always have the most updated version inside the portal**
+- As an **admin user and user** I want to **check the documentation of the website** so that I can **better understand the functionalities, quality and features of it**
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+### Tasks and Planning
 
-Another blue button should appear to click: _Open Browser_.
+Tasks and planning can be seen in the [Plastilecor Price List Portal - GitHub Project](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal).
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+### Colour
 
-A blue button should appear to click: _Make Public_,
+The colour selection was generated from the company logo: [Plastilecor logo](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/plastilecorLogo.jpg). The main HEX code is [#004F1F](https://g.co/kgs/ZfFH1aA).
 
-Another blue button should appear to click: _Open Browser_.
+## Database Model
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Database Model](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/drawSQL-pp4.png)
 
-To log into the Heroku toolbelt CLI:
+## Wireframes
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+__Login__  
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![Login](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/login-wireframe.png)
 
-------
+__Home__  
 
-## Release History
+![Home](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/home-wireframe.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+__Price List__  
 
-**May 28 2024:** Fix Mongo and Links installs
+![PriceList](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/price-list-wireframe.png)
 
-**April 26 2024:** Update node version to 16
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Features
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+__Register__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Register](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/register-feature.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+__Contact Us__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![ContactUs](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/Contact-us-feature.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+__Price List Details__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  - The time counter, the name of the schenario, pumpkins (lives) counter and how many ghosts you have hunt are part of the visual tools for the user/player. 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![PriceListDetails](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/price-list-details-feature.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+__CRUD Functionality__ 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![AddProduct](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/AddProduct.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![EditDeleteProduct](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/EditDeleteProduct.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Validator Testing
+- All relevant files were tested.
+- Python
+  - No errors were returned when passing through the official [pep8ci validator](https://pep8ci.herokuapp.com/)  
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
+- Lighthouse
+  - The result given by the system for the lighthouse assessment is the following:
+![Lighthouse results](https://github.com/diegocardenast/pp4-plastilecor-price-list-portal/blob/main/assets/images/lighthouse-test.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Manual Testing
+**TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
+----------|----------|----------|----------
+Index | Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
+Index | Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
+Login | Login with an admin account	| Notify user about succesfful login and show admin settings options | Works as expected
+Logout | Logout from an admin account | Notify user about succesfful logout and hide admin settings options | Works as expected
+Login | Login with a normal account	| Notify user about succesfful login and show products list options | Works as expected
+Logout | Login from a normal account | Notify user about succesfful logout and hide products list options | Works as expected
+Register | Allow users logged out to register into the platform | Form is saved into admin DB | Works as expected
+Contact us | Fill out contact us form with questions | Form information will be saved into the admin DB | Works as expected
+Admin settings | Create and erase a user from the admin panel with an admin account | admin DB will work correctly based on CRUD principles | Works as expected
+Add Product | Create a product | admin DB will work correctly based on CRUD principles | Works as expected
+Edit Product | Update a product | admin DB will work correctly based on CRUD principles | Works as expected
+Delete Product | Delete a product | admin DB will work correctly based on CRUD principles | Works as expected
+Price list | Visualize the product list as a normal user | interface will render admin DB products correctly | Works as expected
+Price list | Visualize a product detail page as a normal user | interface will render admin DB information correctly | Works as expected
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Unfixed Bugs
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- NA
 
-**How will this affect me?**
+## Deployment 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- The site was deployed in the Heroku. The steps to deploy are as follows: 
+  - Install the **Django Python package** by running in the Gitpod terminal **"pip3 install Django~=4.2.1"**
+  - Update the requirements file by running in the Gitpod terminal **"pip3 freeze > requirements.txt"**
+  - Push the latest changes to the GitHub repository 
+  - Run in the Gitpod terminal **"django-admin startproject my_project ."** to create a Django project. In this case, my_project is called **plastilecor_portal**
+  - Add the **ALLOWED_HOSTS** (in this case '8000-diegocarden-pp4plastile-dl4pq8wxrog.ws-eu108.gitpod.io') into **plastilecor_portal/settings.py** file
+  - Push the latest changes to the GitHub repository
+  - Create Django Apps and Views, as well as configure settings.py
+  - Push the latest changes to the GitHub repository
+  - Inside the Heroku account, create a new app with a unique name (in this case **project-plastilecor-portal**)
+  - Install a production-ready webserver for Heroku running this command inside the gitpod terminal **pip3 install gunicorn~=20.1**
+  - Add **gunicorn==20.1.0** to the **requirements.txt** file with the following command **pip3 freeze --local > requirements.txt**
+  - Inside the Heroku app settings tab, create a _Config Var_ called `PORT`. Set this to `8000`
+  - Inside the Heroku app settings tab, add two buildpacks:
+    - `heroku/python`
+    - `heroku/nodejs`
+  - Inside the Heroku app deploy tab, select GitHub as deployment method and connect the GitHub repository to the Heroku app
+  - Inside the Heroku app deploy tab, click on deploy branch
+  - Click on View App
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The live link can be found [HERE](https://plastilecor-portal-pp4-b72037813267.herokuapp.com/)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+--- 
 
-**So….?**
+## Credits
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Content 
 
-**Can I opt out?**
+- Good/Best practice on the readme were shared by Lauren-Nicole Popich in her [mentoring](https://github.com/CluelessBiker/mentoring/tree/main) GitHub repositry
+- CRUD functionality support found in the videos of [Dee Mc YouTube channel](https://www.youtube.com/@IonaFrisbee)
+- User Stories and tasks creation was implemented following this [publication](https://boosthigh.com/software-requirements-specification/)
+- Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
+- Inspiration of the [institutional color](https://www.plastilecor.com/)
+- The use of GitHub to collaborate and apply good practices was implemented following this [Slack post](https://code-institute-room.slack.com/archives/C05UQAPDNCT/p1697457705802579) and this [GitHub post](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Media
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- The wireframes were created using [Balsamiq Cloud](https://balsamiq.cloud/)
+- The Database model was created using [DrawSQL](https://drawsql.app/)
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
 
-Happy coding!
+Thank You!
+
+Diego Cárdenas 
