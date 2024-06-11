@@ -154,7 +154,23 @@ Price list | Visualize a product detail page as a normal user | interface will r
 
 - NA
 
-## Deployment 
+## Deployment
+
+### Backend (Django REST Framework)
+- Set-Up Django and Django REST Framework installing them by running in the Gitpod terminal **"pip3 install Django~=4.2.1"** & **"pip3 install django djangorestframework"**
+- Update the requirements file by running in the Gitpod terminal **"pip3 freeze > requirements.txt"**
+- Run in the Gitpod terminal **"django-admin startproject bread_preorder_system ."** to create a Django project. In this case, my_project is called **bread_preorder_system**
+- Add the **ALLOWED_HOSTS** (in this case '8000-') into **plastilecor_portal/settings.py** file
+- Push the latest changes to the GitHub repository
+- Create Django Apps and Views, as well as configure settings.py
+- Push the latest changes to the GitHub repository
+
+### Frontend (React)
+
+
+
+
+
 
 - The site was deployed in the Heroku. The steps to deploy are as follows: 
   - Install the **Django Python package** by running in the Gitpod terminal **"pip3 install Django~=4.2.1"**
