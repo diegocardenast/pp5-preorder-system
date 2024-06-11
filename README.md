@@ -1,12 +1,12 @@
 <p align="center">
-  <img width="500" height="100" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.jpg" alt="HofpfistereiLogo">
+  <img width="100" height="150" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.jpg" alt="HofpfistereiLogo">
 </p>
 
 # Bread Preorder System
 
 The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usually, customers need to call in order to make a bread preorder. The idea of this project is to offer an **online platform** where **customers can create their preorders without waiting** for someone to answer the phone in one of the selling points. The platform will be created using React and REST Framework
 
-![Responsive Mockup](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/am-i-responsive.png)
+![Responsive Mockup](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/amIResponsive.png)
 
 ## User Experience
 
@@ -75,40 +75,39 @@ Tasks and planning can be seen in the [Bread Preorder System - GitHub Project](h
 
 ### Colour
 
-The colour selection was generated from the company website: [Hofpfisterei website](https://www.hofpfisterei.de/). The main HEX code is [#004F1F](https://g.co/kgs/E5BdCuk).
+The colour selection was generated from the company website: [Hofpfisterei website](https://www.hofpfisterei.de/). The main HEX code is [#596eb1](https://g.co/kgs/E5BdCuk).
 
 ## Database Model
 
-![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQL-pp5.png)
+![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQLpp5.png)
 
 ## Wireframes
 
-__Login__  
-
-![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/login-wireframe.png)
-
 __Home__  
 
-![Home](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/home-wireframe.png)
+![Home](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/homeWireframe.png)
 
 __Bread Order__  
 
-![PriceList](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/price-list-wireframe.png)
+![BreadOrder](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/breadOrderWireframe.png)
 
+__Login__  
+
+![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/loginWireframe.png)
 
 ## Features
 
 __Register__
 
-![Register](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/register-feature.png)
+![Register](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/registerFeature.png)
 
 __Contact Us__
 
-![ContactUs](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/Contact-us-feature.png)
+![ContactUs](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/ContactUsFeature.png)
 
 __Preorder Details__ 
 
-![PriceListDetails](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/price-list-details-feature.png)
+![PreorderDetails](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/preorderDetails.png)
 
 __CRUD Functionality__ 
 
