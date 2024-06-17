@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100" height="150" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.png" alt="HofpfistereiLogo">
+  <img width="150" height="150" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.png" alt="HofpfistereiLogo">
 </p>
 
 # Bread Preorder System
