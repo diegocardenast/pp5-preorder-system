@@ -1,5 +1,7 @@
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+
 
 """Data model for the selling points or locations"""
 class sellingPoint(models.Model):
@@ -13,7 +15,7 @@ class sellingPoint(models.Model):
 """Data model for the breads that will be sold"""
 class bread(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='bread_images/')
+    image = models.ImageField(upload_to='images/', default='../default_profile_qdjgyp')
     description = models.CharField(max_length=255)
     canBeSliced = models.BooleanField()
     canBeInQuarters = models.BooleanField()
@@ -57,4 +59,25 @@ class preorder(models.Model):
     def __str__(self):
         return f"{self.product.name} for {self.user.username} on {self.pickUpDate}"
 
+
+"""Data model for the user profiles"""
+class profile(models.Model):
+    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now_add=True)
+    lastLogin = models.DateTimeField(auto_now_add=True)
+    userName = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
+
+    class Meta:
+        ordering = ['-createdAt']
+
+    def __str__(self):
+        return f"{self.owner}'s profile"
+
+def createProfile(sender, instance, created, **kwargs):
+    if created:
+        profile.objects.create(owner=instance)
+
+post_save.connect(createProfile, sender=User)
 

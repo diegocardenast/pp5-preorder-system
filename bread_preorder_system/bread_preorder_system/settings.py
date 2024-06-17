@@ -35,7 +35,9 @@ SECRET_KEY = 'django-insecure-to@#2)qxrenoo@l#d-e-n2)#%75f!z+_zlh^$7zx!eqx)c^wjx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
@@ -94,6 +96,13 @@ DATABASES = {
     }
 }
 
+# Trusted Origins
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com",
+    "https://*.codeinstitute-ide.net"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -129,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

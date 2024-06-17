@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import sellingPoint, bread, orderedBread, preorder
+from .models import sellingPoint, bread, orderedBread, preorder, profile
 
 class sellingPointSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,4 +19,9 @@ class orderedBreadSerializer(serializers.ModelSerializer):
 class preorderSerializer(serializers.ModelSerializer):
     class Meta:
         model = preorder
+        fields = '__all__'
+
+class profileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = profile
         fields = '__all__'

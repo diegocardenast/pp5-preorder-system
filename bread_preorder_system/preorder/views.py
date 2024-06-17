@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import sellingPoint, bread, orderedBread, preorder
-from .serializers import sellingPointSerializer, breadSerializer, orderedBreadSerializer, preorderSerializer
+from .models import sellingPoint, bread, orderedBread, preorder, profile
+from .serializers import sellingPointSerializer, breadSerializer, orderedBreadSerializer, preorderSerializer, profileSerializer
 
 # Create your views here.
 class sellingPointViewSet(viewsets.ModelViewSet):
@@ -18,3 +18,7 @@ class orderedBreadViewSet(viewsets.ModelViewSet):
 class preorderViewSet(viewsets.ModelViewSet):
     queryset = preorder.objects.all()
     serializer_class = preorderSerializer
+
+class profileViewSet(viewsets.ModelViewSet):
+    queryset = profile.objects.all()
+    serializer_class = profileSerializer
