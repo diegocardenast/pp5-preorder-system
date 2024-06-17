@@ -17,8 +17,8 @@ class bread(models.Model):
     description = models.CharField(max_length=255)
     canBeSliced = models.BooleanField()
     canBeInQuarters = models.BooleanField()
-    price = models.IntegerField(max_value=None, min_value=None)
-    pricePerKilogram = models.IntegerField(max_value=None, min_value=None)
+    price = models.IntegerField()
+    pricePerKilogram = models.IntegerField()
     createdBy = models.ForeignKey(User, on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
 
@@ -28,10 +28,10 @@ class bread(models.Model):
 """Details that the customer can select when ordering bread"""
 class orderedBread(models.Model):
     name = models.ForeignKey(bread, on_delete=models.CASCADE)
-    quantity = models.IntegerField(max_value=None, min_value=None)
+    quantity = models.IntegerField()
     sliced = models.BooleanField()
-    quarters = models.IntegerField(max_value=None, min_value=None)
-    totalPrice = models.IntegerField(max_value=None, min_value=None)
+    quarters = models.IntegerField()
+    totalPrice = models.IntegerField()
     
     def __str__(self):
         return self.name
@@ -48,8 +48,8 @@ class preorder(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    sellingPoint = models.ForeignKey(SellingPoint, on_delete=models.CASCADE)
-    preorderPrice = models.IntegerField(max_value=None, min_value=None)
+    sellingPoint = models.ForeignKey(sellingPoint, on_delete=models.CASCADE)
+    preorderPrice = models.IntegerField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     pickUpDate = models.DateField()
     createdAt = models.DateTimeField(auto_now_add=True)
