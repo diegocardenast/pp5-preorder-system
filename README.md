@@ -160,7 +160,8 @@ Price list | Visualize a product detail page as a normal user | interface will r
 - Set-Up Django and Django REST Framework installing them by running in the Gitpod terminal **"pip3 install Django~=4.2.1"** & **"pip3 install django djangorestframework"**
 - Update the requirements file by running in the Gitpod terminal **"pip3 freeze > requirements.txt"**
 - Run in the Gitpod terminal **"django-admin startproject bread_preorder_system ."** to create a Django project. In this case, my_project is called **bread_preorder_system**
-- Add the **ALLOWED_HOSTS** (in this case '8000-') into **plastilecor_portal/settings.py** file
+- Add the **ALLOWED_HOSTS** (in this case '8000-') into **bread_preorder_system/settings.py** file
+- Add the **CSRF_TRUSTED_ORIGINS** **bread_preorder_system/settings.py** file
 - Push the latest changes to the GitHub repository
 - Create Django Apps and Views, as well as configure settings.py
 - Push the latest changes to the GitHub repository
@@ -205,6 +206,7 @@ The live link can be found [HERE]()
 - Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
 - Inspiration of the [institutional color](https://www.hofpfisterei.de/)
 - The use of GitHub to collaborate and apply good practices was implemented following this [Slack post](https://code-institute-room.slack.com/archives/C05UQAPDNCT/p1697457705802579) and this [GitHub post](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md)
+- Troubleshooting with [stack overflow](https://stackoverflow.com/)
 
 ### Media
 
@@ -222,9 +224,6 @@ Diego Cárdenas
 
 - [README formatter](https://stackedit.io/app#) : very useful tool
 
-## ALL READMES :
-- [ ] All deployment steps (cloning repo | git add/commit/push | deploy to github pages)
-- [ ] Pass README through a spell checker!
 
 ## PP5 - ADVFE :
 
