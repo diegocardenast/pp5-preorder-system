@@ -14,7 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from .views import root_route, logout_route, sellingPointViewSet, breadViewSet, orderedBreadViewSet, preorderViewSet
+
+"""url patterns for Bread Preorder system"""
+from django.contrib import admin
+from django.urls import path, include
+from .views import root_route, logout_route, sellingPointViewSet, breadViewSet, orderedBreadViewSet, preorderViewSet, contactUsViewSet
 
 
 urlpatterns = [
@@ -32,4 +36,5 @@ urlpatterns = [
     path('', include('preorder.urls')),
     path('', include('sellingPoint.urls')),
     path('', include('userProfile.urls')),
+    path('', include('contactUs.urls')),
 ]
