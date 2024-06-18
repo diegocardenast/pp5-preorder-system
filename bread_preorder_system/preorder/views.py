@@ -1,24 +1,48 @@
 from rest_framework import viewsets
-from .models import sellingPoint, bread, orderedBread, preorder, profile
-from .serializers import sellingPointSerializer, breadSerializer, orderedBreadSerializer, preorderSerializer, profileSerializer
+from .models import preorder
+from .serializers import preorderSerializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .settings import (
+    JWT_AUTH_COOKIE, JWT_AUTH_REFRESH_COOKIE, JWT_AUTH_SAMESITE,
+    JWT_AUTH_SECURE,
+)
+
+
+@api_view()
+def root_route(request):
+    return Response({
+        "message": "Welcome to my drf API!"
+    })
+
+
+# dj-rest-auth logout view fix
+@api_view(['POST'])
+def logout_route(request):
+    response = Response()
+    response.set_cookie(
+        key=JWT_AUTH_COOKIE,
+        value='',
+        httponly=True,
+        expires='Thu, 01 Jan 1970 00:00:00 GMT',
+        max_age=0,
+        samesite=JWT_AUTH_SAMESITE,
+        secure=JWT_AUTH_SECURE,
+    )
+    response.set_cookie(
+        key=JWT_AUTH_REFRESH_COOKIE,
+        value='',
+        httponly=True,
+        expires='Thu, 01 Jan 1970 00:00:00 GMT',
+        max_age=0,
+        samesite=JWT_AUTH_SAMESITE,
+        secure=JWT_AUTH_SECURE,
+    )
+    return response
+
+
 
 # Create your views here.
-class sellingPointViewSet(viewsets.ModelViewSet):
-    queryset = sellingPoint.objects.all()
-    serializer_class = sellingPointSerializer
-
-class breadViewSet(viewsets.ModelViewSet):
-    queryset = bread.objects.all()
-    serializer_class = breadSerializer
-
-class orderedBreadViewSet(viewsets.ModelViewSet):
-    queryset = orderedBread.objects.all()
-    serializer_class = orderedBreadSerializer
-
 class preorderViewSet(viewsets.ModelViewSet):
     queryset = preorder.objects.all()
     serializer_class = preorderSerializer
-
-class profileViewSet(viewsets.ModelViewSet):
-    queryset = profile.objects.all()
-    serializer_class = profileSerializer
