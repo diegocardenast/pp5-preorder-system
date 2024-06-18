@@ -167,7 +167,8 @@ Price list | Visualize a product detail page as a normal user | interface will r
 - Push the latest changes to the GitHub repository
 
 ### Frontend (React)
-
+- Set-Up React in the main folder running **"npx create-react-app bread-preorder-frontend"**. Afterwards, enter  **"cd bread-preorder-frontend"** and then run **"npm install axios react-router-dom"**
+- Install react-bootstrap **"npm install react-bootstrap bootstrap"**
 
 
 
