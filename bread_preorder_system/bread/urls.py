@@ -1,8 +1,10 @@
 from django.urls import path
-from bread import views
+from .views import (
+    BreadListApiView,
+)
 
 urlpatterns = [
-    path('bread/', views.PostList.as_view()),
-    path('bread/<int:pk>/', views.PostDetail.as_view())
+    path('bread/', BreadListApiView.as_view()),
+    # path('bread/<int:pk>/', views.PostDetail.as_view())
 ]
 

@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
-
+from sellingPoint.models import sellingPoint
 
 """Data model for the preorders"""
 class preorder(models.Model):
@@ -14,7 +14,7 @@ class preorder(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    sellingPoint = models.ForeignKey(sellingPoint, on_delete=models.CASCADE)
+    sellingPoint = models.ForeignKey(sellingPoint, on_delete=models.CASCADE, blank=True)
     preorderPrice = models.IntegerField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     pickUpDate = models.DateField()
