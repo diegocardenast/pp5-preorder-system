@@ -1,7 +1,11 @@
 from rest_framework import serializers
-from .models import sellingPoint
+from sellingPoint.models import SellingPoint
 
-class sellingPointSerializer(serializers.ModelSerializer):
+class SellingPointSerializer(serializers.ModelSerializer):
+    name = serializers.ReadOnlyField()
+    address = serializers.ReadOnlyField()
+    googleMapsLink = serializers.ReadOnlyField()
+    
     class Meta:
-        model = sellingPoint
+        model = SellingPoint
         fields = '__all__'

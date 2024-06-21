@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('bread.urls')),
     # path('', include('orderedBread.urls')),
     # path('', include('preorder.urls')),
-    # path('', include('sellingPoint.urls')),
+    path('', include('sellingPoint.urls')),
     # path('', include('userProfile.urls')),
     # path('', include('contactUs.urls')),
 ]

@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Bread(models.Model):
     """Data model for the breads that will be sold"""
     name = models.CharField(max_length=100, unique=True)
