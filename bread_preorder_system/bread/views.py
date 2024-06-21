@@ -8,15 +8,13 @@ from .serializers import breadSerializer
 
 
 class BreadListApiView(APIView):
-    """Breads Data models views"""
-    serializer_class = breadSerializer
     """add permission to check if user is authenticated"""
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
     # 1. List all
     def get (self, request, *args, **kwargs):
-        breads = bread.objects.annotate
-        serializer = serializer_class(breads, many = True)
+        breads = bread.objects.all()
+        serializer = breadSerializer(breads, many = True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     # 2. Create
@@ -32,7 +30,7 @@ class BreadListApiView(APIView):
             'pricePerKilogram': request.data.get('pricePerKilogram'),
             'createdBy': request.user.id
         }
-        serializer = TodoSerializer(data=data)
+        serializer = breadSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
