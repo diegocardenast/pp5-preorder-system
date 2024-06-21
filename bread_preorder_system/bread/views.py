@@ -23,7 +23,14 @@ class BreadListApiView(APIView):
     def post (self, request, *args, **kwargs):
         """Create the Bread with given bread data"""
         data = {
-
+            'name': request.data.get('name'),
+            'image': request.data.get('image'),
+            'description': request.data.get('description'),
+            'canBeSliced': request.data.get('canBeSliced'),
+            'canBeInQuarters': request.data.get('canBeInQuarters'),
+            'price': request.data.get('price'),
+            'pricePerKilogram': request.data.get('pricePerKilogram'),
+            'createdBy': request.user.id
         }
         serializer = TodoSerializer(data=data)
         if serializer.is_valid():

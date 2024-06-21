@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 """Data model for the breads that will be sold"""
 class bread(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     image = models.ImageField(upload_to='images/', default='../default_profile_qdjgyp')
     description = models.CharField(max_length=255)
     canBeSliced = models.BooleanField(default = False)
