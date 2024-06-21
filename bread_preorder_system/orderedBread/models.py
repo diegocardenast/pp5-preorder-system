@@ -1,12 +1,12 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
-from bread.models import bread
+from bread.models import Bread
 
 # Create your models here.
 """Details that the customer can select when ordering bread"""
-class orderedBread(models.Model):
-    name = models.ForeignKey(bread, on_delete=models.CASCADE, blank=True, null=True)
+class OrderedBread(models.Model):
+    name = models.ForeignKey(Bread, on_delete=models.CASCADE, blank=True, null=True)
     quantity = models.IntegerField()
     sliced = models.BooleanField()
     quarters = models.IntegerField()

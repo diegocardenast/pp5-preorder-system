@@ -5,9 +5,11 @@ from rest_framework import status
 from bread.models import bread
 from bread.serializers import breadSerializer
 from rest_framework import permissions
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class BreadDetailApiView(APIView):
     # add permission to check if user is authenticated
+    authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAdminUser]
 
     def get_object(self, bread_id):

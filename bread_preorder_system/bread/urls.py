@@ -1,13 +1,8 @@
-from django.urls import path, include
-from .views import (
-    BreadListApiView,
-)
-from bread_preorder_system.views import(
-    BreadDetailApiView,
-)
+from django.urls import path
+from bread import views
 
 urlpatterns = [
-    path('api/', BreadListApiView.as_view()),
-    path('api/<int:bread_id>/', BreadDetailApiView.as_view())
+    path('bread/', views.BreadListApiView.as_view()),
+    path('bread/<int:bread_id>/', views.BreadDetailApiView.as_view())
 ]
 

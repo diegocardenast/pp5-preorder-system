@@ -24,7 +24,7 @@ from bread import urls as bread_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('bread/', include('bread.urls')),
+    path('', include('bread.urls')),
     # path('', include('orderedBread.urls')),
     # path('', include('preorder.urls')),
     # path('', include('sellingPoint.urls')),
