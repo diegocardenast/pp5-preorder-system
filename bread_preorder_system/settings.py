@@ -69,7 +69,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     '8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
     '8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
-    'pp5-bread-preorder-system-1d13313c4a59.herokuapp.com/',
+    'pp5-bread-preorder-system-1d13313c4a59.herokuapp.com',
 ]
 
 # CORS_ALLOWED_ORIGINS = [
