@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
-from pathlib import Path
 import os
+import dj_database_url
+from pathlib import Path
 import re
 
 
@@ -52,22 +52,39 @@ REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer'
+    'USER_DETAILS_SERIALIZER': 'bread_preorder_system.serializers.CurrentUserSerializer'
 }
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'django-insecure-to@#2)qxrenoo@l#d-e-n2)#%75f!z+_zlh^$7zx!eqx)c^wjx'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+    '8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+    'pp5-bread-preorder-system-1d13313c4a59.herokuapp.com/',
 ]
+
+# CORS_ALLOWED_ORIGINS = [
+#     'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+#     'https://8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+# ]
+
+# CORS_ALLOW_HEADERS = (
+#     "accept",
+#     "authorization",
+#     "content-type",
+#     "user-agent",
+#     "x-csrftoken",
+#     "x-requested-with",
+# )
 
 
 # Application definition
@@ -78,10 +95,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    'corsheaders',
+    
     'bread',
     'contactUs',
     'orderedBread',
@@ -90,8 +116,9 @@ INSTALLED_APPS = [
     'userProfile',
     'djoser',
 ]
-
+SITE_ID = 1
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -102,6 +129,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bread_preorder_system.urls'
+
+if 'CLIENT_ORIGIN' in os.environ:
+     CORS_ALLOWED_ORIGINS = [
+         os.environ.get('CLIENT_ORIGIN')
+     ]
+else:
+     CORS_ALLOWED_ORIGIN_REGEXES = [
+         r"^https://.*\.gitpod\.io$",
+     ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
@@ -124,19 +162,24 @@ WSGI_APPLICATION = 'bread_preorder_system.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DEV' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-
+else:
+     DATABASES = {
+         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 # Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
     "https://*.herokuapp.com",
-    "https://*.codeinstitute-ide.net"
+    "https://*.codeinstitute-ide.net",
+    'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+    'https://8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
 ]
 
 
