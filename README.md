@@ -1,4 +1,4 @@
-<p align="center">
+<p align-text="center">
   <img width="150" height="150" src="https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/hofpfistereiLogo.png" alt="HofpfistereiLogo">
 </p>
 
