@@ -19,19 +19,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bread import urls as bread_urls
-from .views import root_route
+from .views import root_route, logout_route
 
 
 urlpatterns = [
     path('', root_route),
     path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
+    # our logout route has to be above the default one to be matched first
+    path('dj-rest-auth/logout/', logout_route),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('', include('bread.urls')),
+    path('', include('sellingPoint.urls')),
+    path('', include('contactUs.urls')),
     # path('', include('orderedBread.urls')),
     # path('', include('preorder.urls')),
-    path('', include('sellingPoint.urls')),
     # path('', include('userProfile.urls')),
-    # path('', include('contactUs.urls')),
 ]
