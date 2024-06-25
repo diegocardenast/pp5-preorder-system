@@ -3,12 +3,6 @@ from bread.models import Bread
 
 
 class BreadSerializer(serializers.ModelSerializer):
-    name = serializers.ReadOnlyField()
-    image = serializers.ReadOnlyField(source='owner.profile.image.url')
-    canBeSliced = serializers.ReadOnlyField()
-    canBeInQuarters = serializers.ReadOnlyField()
-    price = serializers.ReadOnlyField()
-    pricePerKilogram = serializers.ReadOnlyField()
     createdBy = serializers.ReadOnlyField(source='owner.username')
 
     def validate_image(self, value):

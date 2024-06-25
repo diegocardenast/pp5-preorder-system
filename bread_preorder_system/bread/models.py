@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Bread(models.Model):
     """Data model for the breads that will be sold"""
     name = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to='images/', default='../default_profile_qdjgyp')
+    image = CloudinaryField('image', default='placeholder')
     description = models.CharField(max_length=255)
     canBeSliced = models.BooleanField(default = False)
     canBeInQuarters = models.BooleanField(default = False)
