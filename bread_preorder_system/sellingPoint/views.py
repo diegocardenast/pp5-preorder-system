@@ -9,7 +9,7 @@ class SellingPointListApiView(generics.ListCreateAPIView):
     The perform_create method associates the selling point with the logged in Admin user.
     """
     serializer_class = SellingPointSerializer
-     # add both permission classes 
+    # add both permission classes 
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, permissions.IsAdminUser,)
     queryset = SellingPoint.objects.all().order_by('name')
     filter_backends = [
