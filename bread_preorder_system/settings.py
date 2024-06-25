@@ -69,8 +69,20 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     '8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
     '8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
-    'pp5-bread-preorder-system-1d13313c4a59.herokuapp.com',
+    os.environ.get('ALLOWED_HOST'),
 ]
+
+if 'CLIENT_ORIGIN' in os.environ:
+     CORS_ALLOWED_ORIGINS = [
+         os.environ.get('CLIENT_ORIGIN')
+     ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.codeinstitute-ide\.net$",
+    ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 # CORS_ALLOWED_ORIGINS = [
 #     'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
@@ -130,16 +142,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'bread_preorder_system.urls'
 
-if 'CLIENT_ORIGIN' in os.environ:
-     CORS_ALLOWED_ORIGINS = [
-         os.environ.get('CLIENT_ORIGIN')
-     ]
-else:
-     CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https://.*\.gitpod\.io$",
-     ]
 
-CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
