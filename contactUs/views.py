@@ -1,8 +1,8 @@
 from rest_framework import viewsets
-from .models import contactUs
-from .serializers import orderedBreadSerializer
+from .models import ContactUs
+from .serializers import contactUsSerializer
 
 # Create your views here.
 class contactUsViewSet(viewsets.ModelViewSet):
-    queryset = contactUs.objects.all()
+    queryset = ContactUs.objects.all()
     serializer_class = contactUsSerializer
