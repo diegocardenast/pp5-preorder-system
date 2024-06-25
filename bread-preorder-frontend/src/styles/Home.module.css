@@ -1,0 +1,57 @@
+/* Index Image Styles */
+.indexCol {
+    height: fit-content;
+  }
+.indexResponsive {
+    max-width: 60%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+/* preorder column */
+.colPreorder {
+    margin-bottom: 30px;
+}
+
+/* paragraph Styles */
+.text {
+    font-size: xx-large;
+}
+
+/* Button Styles */
+button, .btn {
+    
+    background-color: #596eb1;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #485a90;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* paragraph Styles */
+    .text {
+        font-size: larger;
+    }
+
+    .indexResponsive {
+        max-width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    /* Button Styles */
+    button, .btn {
+    font-size: larger;
+    }
+
+}
