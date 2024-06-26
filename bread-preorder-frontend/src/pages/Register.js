@@ -7,7 +7,7 @@ import {
     Alert,
   } from "react-bootstrap";
 import styles from '../styles/Register.module.css';
-import axios from 'axios';
+import api from "../api";
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 
@@ -33,7 +33,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('api/dj-rest-auth/registration/', registerData)
+            await api.post('api/dj-rest-auth/registration/', registerData)
             navigate("/login");
         } catch(err){
             setErrors(err.response?.data);
