@@ -32,6 +32,7 @@ const App = () => {
                 <Route path="/orders" element={<YourOrders />} />
                 <Route path="/manage-products" element={<ManageProducts setIsAdmin={setIsAdmin}/>} />
                 <Route path="/manage-selling-points" element={<ManageSellingPoints setIsAdmin={setIsAdmin}/>} />
+                <Route render={() => <p>Page not found!</p>} />
             </Routes>
             <Footer />
         </Router>
