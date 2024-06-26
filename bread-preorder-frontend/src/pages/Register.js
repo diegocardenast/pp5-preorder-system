@@ -80,7 +80,7 @@ const Register = () => {
                     <Form.Label className={styles.text}>Password</Form.Label>
                     <Form.Control 
                         type="password" 
-                        name="password" 
+                        name="password1" 
                         onChange={handleChange}
                         value={password1} 
                         required 
