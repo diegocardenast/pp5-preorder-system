@@ -9,9 +9,11 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PreorderSystem from './pages/PreorderSystem';
 import Account from './pages/Account';
+import ContactUs from './pages/ContactUs';
 import YourOrders from './pages/YourOrders';
 import ManageProducts from './pages/ManageProducts';
 import ManageSellingPoints from './pages/ManageSellingPoints';
+
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -22,13 +24,14 @@ const App = () => {
             <CustomNavbar isAuthenticated={isAuthenticated} isAdmin={isAdmin} />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login setIsAuthenticated={isAuthenticated} />} />
+                <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/preorder" element={<PreorderSystem />} />
                 <Route path="/account" element={<Account />} />
+                <Route path="/contact" element={<ContactUs />} />
                 <Route path="/orders" element={<YourOrders />} />
-                <Route path="/manage-products" element={<ManageProducts />} />
-                <Route path="/manage-selling-points" element={<ManageSellingPoints />} />
+                <Route path="/manage-products" element={<ManageProducts setIsAdmin={setIsAdmin}/>} />
+                <Route path="/manage-selling-points" element={<ManageSellingPoints setIsAdmin={setIsAdmin}/>} />
             </Routes>
             <Footer />
         </Router>
