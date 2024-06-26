@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Container, Form, Button } from 'react-bootstrap';
+import {
+    Form,
+    Button,
+    Container,
+    Alert,
+  } from "react-bootstrap";
 import styles from '../styles/Register.module.css';
 import axios from 'axios';
 
