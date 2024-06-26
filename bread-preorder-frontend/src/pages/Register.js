@@ -1,38 +1,119 @@
 import React, { useState } from 'react';
-import api from '../api';
+import { useHistory } from "react-router-dom";
 import { Container, Form, Button } from 'react-bootstrap';
 import styles from '../styles/Register.module.css';
+import axios from 'axios';
 
 const Register = () => {
-    const [form, setForm] = useState({ username: '', email: '', password: '' });
+    const [registerData, setRegisterData] = useState({ 
+        username: '', 
+        email: '', 
+        password1: '', 
+        password2: '' 
+    });
+
+    const { username, email, password1, password2 } = registerData;
+
+    const [errors, setErrors] = useState({});
+
+    const history = useHistory();
 
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        setRegisterData({ 
+            ...registerData, 
+            [e.target.name]: e.target.value 
+        });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        api.post('auth/register/', form)
-            .then(response => console.log(response))
-            .catch(error => console.error(error));
+        try {
+            await axios.post('api/dj-rest-auth/registration/', registerData)
+            history.push("/login");
+        } catch(err){
+            setErrors(err.response?.data);
+        }
+        
     };
 
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formUsername">
+                <Form.Group controlId="username">
                     <Form.Label className={styles.text} >Username</Form.Label>
-                    <Form.Control type="text" name="username" onChange={handleChange} required />
+                    <Form.Control 
+                        type="text" 
+                        name="username" 
+                        onChange={handleChange}
+                        value={username} 
+                        required 
+                    />
                 </Form.Group>
-                <Form.Group controlId="formEmail">
+                {errors.username?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+                ))}
+                
+                <Form.Group controlId="email">
                     <Form.Label className={styles.text}>Email</Form.Label>
-                    <Form.Control type="email" name="email" onChange={handleChange} required />
+                    <Form.Control 
+                        type="email" 
+                        name="email" 
+                        onChange={handleChange}
+                        value={email} 
+                        required 
+                    />
                 </Form.Group>
-                <Form.Group controlId="formPassword">
+                {errors.email?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                    {message}
+                </Alert>
+                ))}
+                
+                <Form.Group controlId="password1">
                     <Form.Label className={styles.text}>Password</Form.Label>
-                    <Form.Control type="password" name="password" onChange={handleChange} required />
+                    <Form.Control 
+                        type="password" 
+                        name="password" 
+                        onChange={handleChange}
+                        value={password1} 
+                        required 
+                    />
                 </Form.Group>
-                <Button type="submit" className={styles.btn}>Register</Button>
+                {errors.password1?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                    {message}
+                </Alert>
+                ))}
+
+                <Form.Group controlId="password2">
+                    <Form.Label className={styles.text}>Confirm password</Form.Label>
+                    <Form.Control 
+                        type="password" 
+                        name="password2" 
+                        onChange={handleChange}
+                        value={password2} 
+                        required
+                    />
+                </Form.Group>
+                {errors.password2?.map((message, idx) => (
+                <Alert key={idx} variant="warning">
+                    {message}
+                </Alert>
+                ))}
+
+                <Button 
+                    type="submit" 
+                    className={styles.btn}
+                >
+                    Register
+                </Button>
+                {errors.non_field_errors?.map((message, idx) => (
+                <Alert key={idx} variant="warning" className="mt-3">
+                    {message}
+                </Alert>
+                ))}
             </Form>
         </Container>
     );
