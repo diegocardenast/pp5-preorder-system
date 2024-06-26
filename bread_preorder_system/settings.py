@@ -68,6 +68,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
+    'localhost',
     '8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
     '8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
     os.environ.get('ALLOWED_HOST'),
