@@ -12,12 +12,12 @@ import api from "../api";
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 
         username: '', 
-        email: '', 
+        // email: '', 
         password1: '', 
         password2: '' 
     });
 
-    const { username, email, password1, password2 } = registerData;
+    const { username, password1, password2 } = registerData;
 
     const [errors, setErrors] = useState({});
 
@@ -60,7 +60,7 @@ const Register = () => {
                 </Alert>
                 ))}
                 
-                <Form.Group controlId="email">
+                {/* <Form.Group controlId="email">
                     <Form.Label className={styles.text}>Email</Form.Label>
                     <Form.Control 
                         type="email" 
@@ -74,7 +74,7 @@ const Register = () => {
                 <Alert key={idx} variant="warning">
                     {message}
                 </Alert>
-                ))}
+                ))} */}
                 
                 <Form.Group controlId="password1">
                     <Form.Label className={styles.text}>Password</Form.Label>

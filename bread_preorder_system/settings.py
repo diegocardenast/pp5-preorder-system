@@ -84,6 +84,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 # CORS_ALLOWED_ORIGINS = [
 #     'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
