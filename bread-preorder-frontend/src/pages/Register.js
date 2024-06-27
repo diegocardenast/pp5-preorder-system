@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
     Form,
     Button,
@@ -7,7 +7,7 @@ import {
     Alert,
   } from "react-bootstrap";
 import styles from '../styles/Register.module.css';
-import api from "../api";
+import axios from "axios";
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 
@@ -21,7 +21,7 @@ const Register = () => {
 
     const [errors, setErrors] = useState({});
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const handleChange = (e) => {
         setRegisterData({ 
@@ -33,8 +33,8 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('api/dj-rest-auth/registration/', registerData)
-            navigate("/login");
+            await axios.post('api/dj-rest-auth/registration/', registerData)
+            history.push("/login");
         } catch(err){
             setErrors(err.response?.data);
         }
