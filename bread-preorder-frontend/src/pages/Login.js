@@ -9,25 +9,32 @@ import {
 import axios from "axios";
 import styles from '../styles/Login.module.css';
 
-const Login = ({ setIsAuthenticated }) => {
-    const [login, setLogin] = useState({ username: '', password: '' });
+
+function LoginForm() {
+    const [loginData, setLoginData] = useState({
+      username: "",
+      password: "",
+    });
+    const { username, password } = loginData;
+
+    const [errors, setErrors] = useState({});
+
     const navigate = useNavigate();
-
-    const handleChange = (e) => {
-        setLogin({ ...login, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('api/dj-rest-auth/', registerData)
+            await axios.post('api/dj-rest-auth/', loginData)
             navigate('/');
         } catch(err){
             setErrors(err.response?.data);
-        }
-        
+        }  
     };
 
+    const handleChange = (e) => {
+        setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    };
+
+    
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
@@ -77,4 +84,4 @@ const Login = ({ setIsAuthenticated }) => {
     );
 };
 
-export default Login;
+export default LoginForm
