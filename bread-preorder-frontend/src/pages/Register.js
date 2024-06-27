@@ -33,7 +33,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('api/dj-rest-auth/registration/', registerData)
+            await axios.post('/dj-rest-auth/registration/', registerData)
             navigate('/login');
         } catch(err){
             setErrors(err.response?.data);

@@ -23,7 +23,7 @@ function LoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('api/dj-rest-auth/', loginData)
+            await axios.post('/dj-rest-auth/', loginData)
             navigate('/');
         } catch(err){
             setErrors(err.response?.data);
