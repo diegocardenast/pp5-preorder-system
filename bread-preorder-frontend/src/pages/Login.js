@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../api';
-import { Container, Form, Button } from 'react-bootstrap';
+import {
+    Form,
+    Button,
+    Container,
+    Alert,
+  } from "react-bootstrap";
+import axios from "axios";
 import styles from '../styles/Login.module.css';
 
 const Login = ({ setIsAuthenticated }) => {
@@ -12,14 +17,15 @@ const Login = ({ setIsAuthenticated }) => {
         setLogin({ ...login, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        api.post('auth/login/', login)
-            .then(response => {
-                setIsAuthenticated(true);
-                navigate('/');
-            })
-            .catch(error => console.error(error));
+        try {
+            await axios.post('api/dj-rest-auth/', registerData)
+            navigate('/');
+        } catch(err){
+            setErrors(err.response?.data);
+        }
+        
     };
 
     return (
@@ -39,7 +45,7 @@ const Login = ({ setIsAuthenticated }) => {
                     {message}
                 </Alert>
                 ))}
-                
+
                 <Form.Group controlId="password">
                     <Form.Label className={styles.text} >Password</Form.Label>
                     <Form.Control 
