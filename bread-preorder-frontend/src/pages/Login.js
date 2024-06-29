@@ -23,7 +23,7 @@ function LoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/', loginData)
+            await axios.post('/api/dj-rest-auth/login/', loginData)
             navigate('/');
         } catch(err){
             setErrors(err.response?.data);
@@ -41,8 +41,10 @@ function LoginForm() {
                 <Form.Group controlId="username">
                     <Form.Label className={styles.text} >Username</Form.Label>
                     <Form.Control 
-                        type="username" 
-                        name="username" 
+                        type="text"
+                        placeholder="Username" 
+                        name="username"
+                        value={username} 
                         onChange={handleChange} 
                         required 
                     />
@@ -56,8 +58,10 @@ function LoginForm() {
                 <Form.Group controlId="password">
                     <Form.Label className={styles.text} >Password</Form.Label>
                     <Form.Control 
-                        type="password" 
-                        name="password" 
+                        type="password"
+                        placeholder="Password" 
+                        name="password"
+                        value={password} 
                         onChange={handleChange} 
                         required 
                     />

@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import indexImage from "../assets/indexImage.jpg"
 import styles from '../styles/Home.module.css';
 
+
 const Home = ({ isAuthenticated }) => {
     return (
         <Container className="text-center mt-4 mb-4">
@@ -15,7 +16,7 @@ const Home = ({ isAuthenticated }) => {
             <Row>
                 <Col className={styles.colPreorder}>
                     <p className={styles.text}>Welcome to our bread preorder system. Order your fresh bread online and pick it up at your convenience.</p>
-                    {!isAuthenticated ? (
+                    {isAuthenticated ? (
                     <Button as={Link} to="/preorder" variant="primary" size="lg" className={styles.btn}>Preorder Now</Button>
                     ):(<p></p>) }
                 </Col>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import logo from "../assets/hofpfistereiLogo.png"
+import logo from "../assets/hofpfistereiLogo.png";
 import styles from '../styles/Navbar.module.css';
+
+
 const CustomNavbar = ({ isAuthenticated, isAdmin }) => {
     return (
         <Navbar className={styles.navbar} bg="primary" variant="dark" expand="lg" style={{ backgroundColor: '#596eb1' }}>
@@ -21,7 +23,7 @@ const CustomNavbar = ({ isAuthenticated, isAdmin }) => {
                                 <i class="fa-solid fa-user-plus"></i>Register
                             </Nav.Link>
                         </>
-                    ) : (
+                    ):(
                         <>
                             <Nav.Link as={Link} to="/account" className={styles.navOptions}>
                                 <i class="fa-solid fa-circle-user"></i>Account

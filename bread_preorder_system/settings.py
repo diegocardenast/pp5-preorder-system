@@ -65,7 +65,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = 'DEV' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -81,25 +81,24 @@ if 'CLIENT_ORIGIN' in os.environ:
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.codeinstitute-ide\.net$",
+        r"^https://.*\.codeinstitute-ide\.net$",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
 # CORS_ALLOWED_ORIGINS = [
-#     'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
-#     'https://8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+#     os.environ.get('CLIENT_ORIGIN')
 # ]
 
-# CORS_ALLOW_HEADERS = (
-#     "accept",
-#     "authorization",
-#     "content-type",
-#     "user-agent",
-#     "x-csrftoken",
-#     "x-requested-with",
-# )
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+)
 
 
 # Application definition
@@ -187,6 +186,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net",
     'https://8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
     'https://8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net',
+    "http://localhost:8000/",
 ]
 
 
