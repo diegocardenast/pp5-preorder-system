@@ -1,18 +1,21 @@
 {
   "files.exclude": {
-      "**/.DS_Store": true,
-      "**/.git": true,
-      "**/.github": true,
-      "**/.gitp*": true,
-      "**/.hg": true,
-      "**/.svn": true,
-      "**/.vscode": true,
-      "**/core.Microsoft*": true,
-      "**/core.mongo*": true,
-      "**/core.python*": true,
-      "**/CVS": true
-   },
-   "files.autoSave": "off",
-   "workbench.colorTheme": "Default Dark Modern",
-   "terminal.integrated.gpuAcceleration": "canvas",
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.github": true,
+    "**/.gitp*": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/core.Microsoft*": true,
+    "**/core.mongo*": true,
+    "**/core.python*": true,
+    "**/CVS": true
+  },
+  "files.autoSave": "onWindowChange",
+  "workbench.colorTheme": "Default Dark Modern",
+  "terminal.integrated.gpuAcceleration": "canvas",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  }
 }
