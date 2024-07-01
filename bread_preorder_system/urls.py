@@ -24,20 +24,19 @@ from .views import logout_route
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html')),
-    path('admin/', admin.site.urls),
-    path('api/api-auth/', include('rest_framework.urls')),
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("admin/", admin.site.urls),
+    path("api/api-auth/", include("rest_framework.urls")),
     # our logout route has to be above the default one to be matched first
-    path('api/dj-rest-auth/logout/', logout_route),
-    path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('api/', include('bread.urls')),
-    path('api/', include('sellingPoint.urls')),
-    path('api/', include('contactUs.urls')),
+    path("api/dj-rest-auth/logout/", logout_route),
+    path("api/dj-rest-auth/", include("dj_rest_auth.urls")),
+    path("api/dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
+    path("api/", include("bread.urls")),
+    path("api/", include("sellingPoint.urls")),
+    path("api/", include("contactUs.urls")),
     # path('api/', include('userProfile.urls')),
     # path('api/', include('orderedBread.urls')),
     # path('api/', include('preorder.urls')),
-    
 ]
 
-handler404 = TemplateView.as_view(template_name='index.html')
+handler404 = TemplateView.as_view(template_name="index.html")
