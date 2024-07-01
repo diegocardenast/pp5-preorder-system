@@ -1,30 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/hofpfistereiLogo.png";
 import styles from "../styles/Navbar.module.css";
-import { useCurrentUser } from "../context/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../context/CurrentUserContext";
+import axios from "axios";
 
-const CustomNavbar = () => {
+const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleLogOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const loggedInIcons = (
     <>
-      <Nav.Link as={Link} to="/account" className={styles.navOptions}>
-        <i class="fa-solid fa-circle-user"></i>Account
+      <Nav.Link as={Link} to={`/account/${currentUser?.id}`} className={styles.navOptions}>
+        <i className="fa-solid fa-circle-user"></i>Account
       </Nav.Link>
 
       <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
-        <i class="fa-solid fa-receipt"></i>Your Orders
+        <i className="fa-solid fa-receipt"></i>Your Orders
       </Nav.Link>
 
       <Nav.Link
         as={Link}
         to="/"
-        onClick={useCurrentUser(null)}
+        onClick={handleLogOut}
         className={styles.navOptions}
       >
-        <i class="fa-solid fa-right-from-bracket"></i>Log Out
+        <i className="fa-solid fa-right-from-bracket"></i>Log Out
       </Nav.Link>
 
       <span className={styles.userName}>{currentUser?.username}</span>
@@ -32,19 +43,19 @@ const CustomNavbar = () => {
   );
   const loggedOutIcons = (
     <>
-      <Nav.Link as={Link} to="/login" className={styles.navOptions}>
-        <i class="fa-solid fa-right-to-bracket"></i>Login
+      <Nav.Link as={Link} to="/login" className={styles.userName}>
+        <i className="fa-solid fa-right-to-bracket"></i>Login
       </Nav.Link>
 
       <Nav.Link as={Link} to="/register" className={styles.navOptions}>
-        <i class="fa-solid fa-user-plus"></i>Register
+        <i className="fa-solid fa-user-plus"></i>Register
       </Nav.Link>
     </>
   );
   const adminIcons = (
     <>
       <Nav.Link as={Link} to="/manage-products" className={styles.navOptions}>
-        <i class="fa-solid fa-pen-to-square"></i>Products
+        <i className="fa-solid fa-pen-to-square"></i>Products
       </Nav.Link>
 
       <Nav.Link
@@ -52,7 +63,7 @@ const CustomNavbar = () => {
         to="/manage-selling-points"
         className={styles.navOptions}
       >
-        <i class="fa-solid fa-store"></i>Stores
+        <i className="fa-solid fa-store"></i>Stores
       </Nav.Link>
     </>
   );
@@ -60,11 +71,9 @@ const CustomNavbar = () => {
   return (
     <Navbar
       className={styles.navbar}
-      bg="primary"
-      variant="dark"
       expand="lg"
-      style={{ backgroundColor: "#596eb1" }}
     >
+    <Container>
       <Navbar.Toggle />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
@@ -80,8 +89,9 @@ const CustomNavbar = () => {
       <Navbar.Brand className={styles.logoBrand}>
         <img src={logo} alt="Hofpfisterei Logo" className={styles.responsive} />
       </Navbar.Brand>
+    </Container>
     </Navbar>
   );
 };
 
-export default CustomNavbar;
+export default NavBar;

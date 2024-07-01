@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import {
     Form,
     Button,
@@ -21,7 +21,7 @@ const Register = () => {
 
     const [errors, setErrors] = useState({});
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const handleChange = (e) => {
         setRegisterData({ 
@@ -34,7 +34,7 @@ const Register = () => {
         e.preventDefault();
         try {
             await axios.post('/api/dj-rest-auth/registration/', registerData)
-            navigate('/login');
+            history.push('/login');
         } catch(err){
             setErrors(err.response?.data);
         }
