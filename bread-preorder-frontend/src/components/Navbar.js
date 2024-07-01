@@ -14,10 +14,18 @@ const CustomNavbar = () => {
         <i class="fa-solid fa-circle-user"></i>Account
       </Nav.Link>
 
-      <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
+      {/* For Phase 2 of the project */}
+      {/* <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
         <i class="fa-solid fa-receipt"></i>Your Orders
+      </Nav.Link> */}
+
+      <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
+        <i class="fa-solid fa-bread-slice"></i>Breads
       </Nav.Link>
 
+      <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
+        <i class="fa-solid fa-envelope"></i>Contact
+      </Nav.Link>
       <Nav.Link
         as={Link}
         to="/"
@@ -38,6 +46,10 @@ const CustomNavbar = () => {
 
       <Nav.Link as={Link} to="/register" className={styles.navOptions}>
         <i class="fa-solid fa-user-plus"></i>Register
+      </Nav.Link>
+
+      <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
+        <i class="fa-solid fa-envelope"></i>Contact
       </Nav.Link>
     </>
   );
