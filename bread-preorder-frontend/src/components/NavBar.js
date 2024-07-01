@@ -43,7 +43,7 @@ const NavBar = () => {
   );
   const loggedOutIcons = (
     <>
-      <Nav.Link as={Link} to="/login" className={styles.userName}>
+      <Nav.Link as={Link} to="/login" className={styles.navOptions}>
         <i className="fa-solid fa-right-to-bracket"></i>Login
       </Nav.Link>
 
