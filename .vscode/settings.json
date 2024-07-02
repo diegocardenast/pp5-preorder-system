@@ -11,7 +11,7 @@
     "**/core.python*": true,
     "**/CVS": true
   },
-  "files.autoSave": "onWindowChange",
+  "files.autoSave": "afterDelay",
   "workbench.colorTheme": "Default Dark Modern",
   "terminal.integrated.gpuAcceleration": "canvas",
   "[python]": {

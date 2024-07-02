@@ -9,8 +9,8 @@ function LoginForm() {
   const setCurrentUser = useSetCurrentUser();
 
   const [loginData, setLoginData] = useState({
-    username: "",
-    password: "",
+    username: "acmantilla29",
+    password: "Diego3751@",
   });
   const { username, password } = loginData;
 

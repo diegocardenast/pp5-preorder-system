@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import api from "../api";
 import { Container, Form, Button } from "react-bootstrap";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../context/CurrentUserContext";
+import axios from "axios";
 
 const Account = () => {
   const currentUser = useCurrentUser();
@@ -18,7 +18,13 @@ const Account = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.put(`/dj-rest-auth/user/${currentUser.id}`, currentUser);
+      const payload = { ...currentUser };
+      delete payload.username;
+      delete payload.date_joined;
+      delete payload.last_login;
+      console.log(payload);
+      await axios.patch(`dj-rest-auth/user/`, payload);
+      history.push("/");
       // fetchProfile();
     } catch (error) {
       console.error(error);
@@ -34,6 +40,7 @@ const Account = () => {
           <Form.Control
             type="text"
             name="username"
+            disabled
             value={currentUser.username}
             onChange={handleChange}
             required
@@ -53,7 +60,7 @@ const Account = () => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
-            name="name"
+            name="first_name"
             value={currentUser.first_name}
             onChange={handleChange}
             required
@@ -63,18 +70,8 @@ const Account = () => {
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             type="text"
-            name="lastName"
+            name="last_name"
             value={currentUser.last_name}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group controlId="isAdmin">
-          <Form.Label>Admin Access</Form.Label>
-          <Form.Control
-            type="boolean"
-            name="adminAccess"
-            value={currentUser.is_superuser}
             onChange={handleChange}
             required
           />

@@ -24,18 +24,9 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <Nav.Link
-        as={Link}
-        to={`/account/${currentUser?.id}`}
-        className={styles.navOptions}
-      >
+      <Nav.Link as={Link} to="/account" className={styles.navOptions}>
         <i className="fa-solid fa-circle-user"></i>Account
       </Nav.Link>
-
-      {/* For Phase 2 of the project */}
-      {/* <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
-        <i className="fa-solid fa-receipt"></i>Your Orders
-      </Nav.Link> */}
 
       <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
         <i className="fa-solid fa-bread-slice"></i>Breads
