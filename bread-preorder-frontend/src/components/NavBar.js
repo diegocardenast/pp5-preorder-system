@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/hofpfistereiLogo.png";
 import styles from "../styles/Navbar.module.css";
-import { useCurrentUser, useSetCurrentUser } from "../context/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../context/CurrentUserContext";
 import axios from "axios";
 
 const NavBar = () => {
@@ -12,7 +15,7 @@ const NavBar = () => {
 
   const handleLogOut = async () => {
     try {
-      await axios.post("dj-rest-auth/logout/");
+      await axios.post("/api/dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
       console.log(err);
@@ -21,21 +24,25 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <Nav.Link as={Link} to={`/account/${currentUser?.id}`} className={styles.navOptions}>
+      <Nav.Link
+        as={Link}
+        to={`/account/${currentUser?.id}`}
+        className={styles.navOptions}
+      >
         <i className="fa-solid fa-circle-user"></i>Account
       </Nav.Link>
 
       {/* For Phase 2 of the project */}
       {/* <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
-        <i class="fa-solid fa-receipt"></i>Your Orders
+        <i className="fa-solid fa-receipt"></i>Your Orders
       </Nav.Link> */}
 
       <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
-        <i class="fa-solid fa-bread-slice"></i>Breads
+        <i className="fa-solid fa-bread-slice"></i>Breads
       </Nav.Link>
 
       <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
-        <i class="fa-solid fa-envelope"></i>Contact
+        <i className="fa-solid fa-envelope"></i>Contact
       </Nav.Link>
       <Nav.Link
         as={Link}
@@ -56,11 +63,11 @@ const NavBar = () => {
       </Nav.Link>
 
       <Nav.Link as={Link} to="/register" className={styles.navOptions}>
-        <i class="fa-solid fa-user-plus"></i>Register
+        <i className="fa-solid fa-user-plus"></i>Register
       </Nav.Link>
 
       <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
-        <i class="fa-solid fa-envelope"></i>Contact
+        <i className="fa-solid fa-envelope"></i>Contact
       </Nav.Link>
     </>
   );
@@ -81,27 +88,36 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar
-      className={styles.navbar}
-      expand="lg"
-    >
-    <Container>
-      <Navbar.Toggle />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav>
-          <Nav.Link as={Link} to="/" className={styles.navOptions}>
-            <i className="fas fa-home"></i>Home
-          </Nav.Link>
+    <Navbar className={styles.navbar} expand="lg">
+      <Container>
+        <Navbar.Toggle />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+            <Nav.Link as={Link} to="/" className={styles.navOptions}>
+              <i className="fas fa-home"></i>Home
+            </Nav.Link>
 
-          {currentUser ? loggedInIcons : loggedOutIcons}
-          {currentUser ? currentUser.is_staff ? adminIcons : <p></p> : <p></p>}
-        </Nav>
-      </Navbar.Collapse>
+            {currentUser ? loggedInIcons : loggedOutIcons}
+            {currentUser ? (
+              currentUser.is_staff ? (
+                adminIcons
+              ) : (
+                <p></p>
+              )
+            ) : (
+              <p></p>
+            )}
+          </Nav>
+        </Navbar.Collapse>
 
-      <Navbar.Brand className={styles.logoBrand}>
-        <img src={logo} alt="Hofpfisterei Logo" className={styles.responsive} />
-      </Navbar.Brand>
-    </Container>
+        <Navbar.Brand className={styles.logoBrand}>
+          <img
+            src={logo}
+            alt="Hofpfisterei Logo"
+            className={styles.responsive}
+          />
+        </Navbar.Brand>
+      </Container>
     </Navbar>
   );
 };
