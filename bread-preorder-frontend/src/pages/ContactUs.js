@@ -2,29 +2,35 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Alert } from 'react-bootstrap';
 import axios from 'axios';
 
+
 const ContactUs = () => {
-    const [form, setForm] = useState({ name: '', email: '', message: '' });
+    const [form, setForm] = useState({ 
+        name: '', 
+        email: '', 
+        message: '' 
+    });
+
+    const { name, email, message } = form;
+
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');
     const [alertVariant, setAlertVariant] = useState('success');
+    
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        setForm({ 
+            ...form, 
+            [e.target.name]: e.target.value 
+        });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/contact-forms/', form);
-            if (response.status === 201) {
+            await axios.post('contactUs/', form);
                 setAlertMessage('Your message has been sent successfully!');
                 setAlertVariant('success');
                 setForm({ name: '', email: '', message: '' });
-            } else {
-                setAlertMessage('Failed to send your message. Please try again.');
-                setAlertVariant('danger');
-            }
         } catch (error) {
             setAlertMessage('An error occurred. Please try again.');
             setAlertVariant('danger');
@@ -43,7 +49,7 @@ const ContactUs = () => {
                     <Form.Control
                         type="text"
                         name="name"
-                        value={form.name}
+                        value={name}
                         onChange={handleChange}
                         required
                     />
@@ -53,7 +59,7 @@ const ContactUs = () => {
                     <Form.Control
                         type="email"
                         name="email"
-                        value={form.email}
+                        value={email}
                         onChange={handleChange}
                         required
                     />
@@ -63,7 +69,7 @@ const ContactUs = () => {
                     <Form.Control
                         as="textarea"
                         name="message"
-                        value={form.message}
+                        value={message}
                         onChange={handleChange}
                         rows={4}
                         required

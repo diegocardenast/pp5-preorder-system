@@ -4,4 +4,10 @@ from .models import ContactUs
 class ContactUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactUs
-        fields = '__all__'
+        fields = [
+        "name",
+        "email",
+        "message",
+        "createdAt",
+        "read",
+        ]

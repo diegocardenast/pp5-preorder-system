@@ -4,11 +4,13 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../context/CurrentUserContext";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Account = () => {
   const currentUser = useCurrentUser();
   const setUser = useSetCurrentUser();
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

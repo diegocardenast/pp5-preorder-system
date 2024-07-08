@@ -11,8 +11,7 @@ import axios from "axios";
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 
-        username: '', 
-        // email: '', 
+        username: '',  
         password1: '', 
         password2: '' 
     });
@@ -59,22 +58,6 @@ const Register = () => {
                     {message}
                 </Alert>
                 ))}
-                
-                {/* <Form.Group controlId="email">
-                    <Form.Label className={styles.text}>Email</Form.Label>
-                    <Form.Control 
-                        type="email" 
-                        name="email" 
-                        onChange={handleChange}
-                        value={email} 
-                        required 
-                    />
-                </Form.Group>
-                {errors.email?.map((message, idx) => (
-                <Alert key={idx} variant="warning">
-                    {message}
-                </Alert>
-                ))} */}
                 
                 <Form.Group controlId="password1">
                     <Form.Label className={styles.text}>Password</Form.Label>
