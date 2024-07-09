@@ -4,6 +4,11 @@
   padding: 10px 25px;
 }
 
+.container{
+  padding: auto;
+  margin-top: auto;
+}
+
 .logoBrand {
   color: #fff !important;
   font-weight: bold;

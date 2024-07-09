@@ -8,10 +8,13 @@ import {
   useSetCurrentUser,
 } from "../context/CurrentUserContext";
 import axios from "axios";
+import useClickOutsideToggle from "../hook/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleLogOut = async () => {
     try {
@@ -79,9 +82,12 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar className={styles.navbar} expand="lg">
-      <Container>
-        <Navbar.Toggle />
+    <Navbar className={styles.navbar} expand="lg" expanded={expanded} variant="dark">
+      <Container className="container">
+        <Navbar.Toggle
+          ref={ref}  
+          onClick={() => setExpanded(!expanded)}
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Nav.Link as={Link} to="/" className={styles.navOptions}>
