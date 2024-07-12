@@ -4,7 +4,7 @@
   padding: 10px 25px;
 }
 
-.container{
+.container {
   padding: auto;
   margin-top: auto;
 }
@@ -60,5 +60,19 @@ i {
   .navOptions {
     color: white !important;
     font-size: larger;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 321px) {
+  .responsive {
+    width: auto;
+    height: auto;
+    max-width: 30%;
+    max-height: 40%;
+  }
+  .logoBrand {
+    width: 190px;
+    height: auto;
   }
 }

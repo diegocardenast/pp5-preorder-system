@@ -11,6 +11,7 @@ import axios from "axios";
 import useClickOutsideToggle from "../hook/useClickOutsideToggle";
 
 const NavBar = () => {
+  // This function renders the Navbar of the App
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -25,19 +26,60 @@ const NavBar = () => {
     }
   };
 
-  const loggedInIcons = (
+  const adminIcons = (
+    // Options that appear for admin Users
     <>
+      <Nav.Link as={Link} to="/manage-products" className={styles.navOptions}>
+        <i className="fa-solid fa-pen-to-square"></i>Edit Products
+      </Nav.Link>
+
+      <Nav.Link
+        as={Link}
+        to="/manage-selling-points"
+        className={styles.navOptions}
+      >
+        <i className="fa-solid fa-store"></i>Stores
+      </Nav.Link>
+
       <Nav.Link as={Link} to="/account" className={styles.navOptions}>
         <i className="fa-solid fa-circle-user"></i>Account
       </Nav.Link>
 
-      <Nav.Link as={Link} to="/orders" className={styles.navOptions}>
+      <Nav.Link as={Link} to="/products" className={styles.navOptions}>
         <i className="fa-solid fa-bread-slice"></i>Breads
       </Nav.Link>
 
       <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
         <i className="fa-solid fa-envelope"></i>Contact
       </Nav.Link>
+
+      <Nav.Link
+        as={Link}
+        to="/"
+        onClick={handleLogOut}
+        className={styles.navOptions}
+      >
+        <i className="fa-solid fa-right-from-bracket"></i>Log Out
+      </Nav.Link>
+
+      <span className={styles.userName}>{currentUser?.username}</span>
+    </>
+  );
+  const loggedInIcons = (
+    // Options that appear for loggedIn Users
+    <>
+      <Nav.Link as={Link} to="/account" className={styles.navOptions}>
+        <i className="fa-solid fa-circle-user"></i>Account
+      </Nav.Link>
+
+      <Nav.Link as={Link} to="/products" className={styles.navOptions}>
+        <i className="fa-solid fa-bread-slice"></i>Breads
+      </Nav.Link>
+
+      <Nav.Link as={Link} to="/contact" className={styles.navOptions}>
+        <i className="fa-solid fa-envelope"></i>Contact
+      </Nav.Link>
+
       <Nav.Link
         as={Link}
         to="/"
@@ -51,6 +93,7 @@ const NavBar = () => {
     </>
   );
   const loggedOutIcons = (
+    // Options that appear for loggedOut Users
     <>
       <Nav.Link as={Link} to="/login" className={styles.navOptions}>
         <i className="fa-solid fa-right-to-bracket"></i>Login
@@ -65,45 +108,28 @@ const NavBar = () => {
       </Nav.Link>
     </>
   );
-  const adminIcons = (
-    <>
-      <Nav.Link as={Link} to="/manage-products" className={styles.navOptions}>
-        <i className="fa-solid fa-pen-to-square"></i>Products
-      </Nav.Link>
-
-      <Nav.Link
-        as={Link}
-        to="/manage-selling-points"
-        className={styles.navOptions}
-      >
-        <i className="fa-solid fa-store"></i>Stores
-      </Nav.Link>
-    </>
-  );
 
   return (
-    <Navbar className={styles.navbar} expand="lg" expanded={expanded} variant="dark">
+    <Navbar
+      className={styles.navbar}
+      expand="md"
+      expanded={expanded}
+      variant="dark"
+    >
       <Container className="container">
-        <Navbar.Toggle
-          ref={ref}  
-          onClick={() => setExpanded(!expanded)}
-        />
+        <Navbar.Toggle ref={ref} onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Nav.Link as={Link} to="/" className={styles.navOptions}>
               <i className="fas fa-home"></i>Home
             </Nav.Link>
 
-            {currentUser ? loggedInIcons : loggedOutIcons}
-            {currentUser ? (
-              currentUser.is_staff ? (
-                adminIcons
-              ) : (
-                <p></p>
-              )
-            ) : (
-              <p></p>
-            )}
+            {/* Logic to render the different options depending on the type of user */}
+            {currentUser
+              ? currentUser.is_staff
+                ? adminIcons
+                : loggedInIcons
+              : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
 
