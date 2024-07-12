@@ -31,7 +31,7 @@ urlpatterns = [
     path("api/dj-rest-auth/logout/", logout_route),
     path("api/dj-rest-auth/", include("dj_rest_auth.urls")),
     path("api/dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
-    path("api/", include("bread.urls")),
+    path("api/bread/", include("bread.urls")),
     path("api/", include("sellingPoint.urls")),
     path("api/contactUs/", include("contactUs.urls")),
     # path('api/', include('userProfile.urls')),

@@ -31,6 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # AUTHENTICATION setup
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         (
@@ -57,6 +58,13 @@ JWT_AUTH_SAMESITE = "None"
 REST_AUTH_SERIALIZERS = {
     "USER_DETAILS_SERIALIZER": "bread_preorder_system.serializers.CurrentUserSerializer"
 }
+
+REST_AUTH = {
+    'USE_JWT': True,
+    'JWT_AUTH_COOKIE': 'my-app-author',
+    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-tokenizer',    
+}
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
