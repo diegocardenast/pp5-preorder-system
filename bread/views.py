@@ -11,7 +11,7 @@ class BreadListApiView(generics.ListCreateAPIView):
     """
     serializer_class = BreadSerializer
      # add both permission classes 
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, permissions.IsAdminUser,)
+    permission_classes = (permissions.IsAdminUser,)
     queryset = Bread.objects.all().order_by('name')
     filter_backends = [
         filters.OrderingFilter,
@@ -40,4 +40,13 @@ class BreadDetailApiView(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = BreadSerializer
     permission_classes = (permissions.IsAdminUser,)
+    queryset = Bread.objects.all().order_by('name')
+
+
+class BreadDetailListApiView(generics.ListAPIView):
+    """
+    Retrieve a bread list only to read it.
+    """
+    serializer_class = BreadSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Bread.objects.all().order_by('name')
