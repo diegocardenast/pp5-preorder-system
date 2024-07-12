@@ -1,24 +1,24 @@
 /* Footer Styles */
 footer {
-    background-color: #596eb1;
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #ddd;
+  background-color: #596eb1;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
 }
 
 footer p {
-    margin: 0;
-    color: white;
-    font-size: x-large;
+  margin: 0;
+  color: white;
+  font-size: large;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    /* paragraph Styles */
-    footer p {
-        font-size: larger;
-    }
+  /* paragraph Styles */
+  footer p {
+    font-size: small;
+  }
 }
