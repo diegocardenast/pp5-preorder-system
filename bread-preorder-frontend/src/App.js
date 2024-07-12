@@ -8,7 +8,7 @@ import "./styles/styles.css";
 
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Breads from "./pages/Breads";
+import Breads from "./pages/Products";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PreorderSystem from "./pages/PreorderSystem";
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/login" render={() => <Login />} />
           <Route exact path="/register" render={() => <Register />} />
-          <Route exact path="/breads" render={() => <Breads />} />
+          <Route exact path="/products" render={() => <Breads />} />
           <Route exact path="/preorder" render={() => <PreorderSystem />} />
           <Route exact path="/account" render={() => <Account />} />
           <Route exact path="/contact" render={() => <ContactUs />} />
