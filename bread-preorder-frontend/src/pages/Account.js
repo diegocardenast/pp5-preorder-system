@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import {
   useCurrentUser,
@@ -7,6 +7,7 @@ import {
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+// Account Page
 const Account = () => {
   const currentUser = useCurrentUser();
   const setUser = useSetCurrentUser();
@@ -17,6 +18,7 @@ const Account = () => {
     setUser({ ...currentUser, [name]: value });
   };
 
+  // Updates Payload
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,7 +29,6 @@ const Account = () => {
       console.log(payload);
       await axios.patch(`dj-rest-auth/user/`, payload);
       history.push("/");
-      // fetchProfile();
     } catch (error) {
       console.error(error);
     }
@@ -53,6 +54,7 @@ const Account = () => {
           <Form.Control
             type="email"
             name="email"
+            disabled
             value={currentUser.email}
             onChange={handleChange}
             required
