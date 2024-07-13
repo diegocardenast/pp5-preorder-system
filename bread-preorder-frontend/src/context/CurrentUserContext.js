@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 
+// Context provides a way to pass data through the component tree without having to pass props manually at every level
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 

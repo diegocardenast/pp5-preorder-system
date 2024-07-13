@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import Breads from "./pages/Products";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import PreorderSystem from "./pages/PreorderSystem";
 import Account from "./pages/Account";
 import ContactUs from "./pages/ContactUs";
 import YourOrders from "./pages/YourOrders";
@@ -28,7 +27,6 @@ function App() {
           <Route exact path="/login" render={() => <Login />} />
           <Route exact path="/register" render={() => <Register />} />
           <Route exact path="/products" render={() => <Breads />} />
-          <Route exact path="/preorder" render={() => <PreorderSystem />} />
           <Route exact path="/account" render={() => <Account />} />
           <Route exact path="/contact" render={() => <ContactUs />} />
           <Route exact path="/orders" render={() => <YourOrders />} />
