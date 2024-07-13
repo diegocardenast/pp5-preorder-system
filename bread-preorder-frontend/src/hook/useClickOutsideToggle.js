@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+// Hook to allow better UX when using collapsed navBar
 const useClickOutsideToggle = () => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef(null);
