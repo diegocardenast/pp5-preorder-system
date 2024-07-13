@@ -9,14 +9,16 @@ import {
 import styles from '../styles/Register.module.css';
 import axios from "axios";
 
+// User register form
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 
-        username: '',  
+        username: '',
+        email: '',  
         password1: '', 
         password2: '' 
     });
 
-    const { username, password1, password2 } = registerData;
+    const { username, email, password1, password2 } = registerData;
 
     const [errors, setErrors] = useState({});
 
@@ -59,6 +61,22 @@ const Register = () => {
                 </Alert>
                 ))}
                 
+                <Form.Group controlId="email">
+                    <Form.Label className={styles.text} >Email</Form.Label>
+                    <Form.Control 
+                        type="email" 
+                        name="email" 
+                        onChange={handleChange}
+                        value={email} 
+                        required 
+                    />
+                </Form.Group>
+                {errors.email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+                ))}
+
                 <Form.Group controlId="password1">
                     <Form.Label className={styles.text}>Password</Form.Label>
                     <Form.Control 
