@@ -4,22 +4,52 @@
 
 # Bread Preorder System
 
-The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usually, customers need to call in order to make a bread preorder. The idea of this project is to offer an **online platform** where **customers can create their preorders without waiting** for someone to answer the phone in one of the selling points. The platform will be created using React and REST Framework
+The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usually, customers need to call and make a preorder. The idea of this project is to offer an **online platform** where **customers can create their preorders without waiting** for someone to answer the phone in one of the selling points. The platform will be created using React and REST Framework.
+
+This project will be separated in two phases. The first one will have accounts access functionality and will provide a CRUD functionality on the types of bread. The second part will be planned and is expected to contain the preorder system. This repository will cover only the first phase.
 
 ![Responsive Mockup](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/amIResponsive.png)
 
 ## User Experience
 
-### User Stories
+### User Stories - Phase 1
 
 #### As a Customer
 
 ##### User Registration and Login
-- As a **customer**, I want to create an account so that I can log in and place preorders.
-- As a **customer**, I want to log in to my account so that I can access my preorder history and place new preorders.
+- As a **customer**, I want to create an account so that I can log in.
 
 ##### Browsing Bread Products
 - As a **customer**, I want to browse a list of bread products so that I can choose which bread to preorder.
+
+#### As an Admin
+
+##### Managing Bread Products
+- As an **admin**, I want to create new bread products so that customers can preorder them.
+- As an **admin**, I want to update existing bread products so that I can keep the product information current.
+- As an **admin**, I want to delete bread products so that I can remove products that are no longer available.
+- As an **admin**, I want to view a list of all bread products so that I can manage them effectively.
+
+### Functional Requirements - Phase 1
+
+#### User Registration and Authentication
+- Implement user registration and login functionality using REST framework for backend authentication.
+- Use React for the frontend to create forms for registration and login.
+
+#### Bread Product Management
+- Implement CRUD (Create, Read, Update, Delete) operations for bread products in the backend using REST framework.
+- Use React to create an admin interface for managing bread products.
+
+
+### User Stories - Phase 2
+
+#### As a Customer
+
+##### User Registration and Login
+- As a **customer**, I want to create an account so that I can place preorders.
+- As a **customer**, I want to log in to my account so that I can access my preorder history.
+
+##### Browsing Bread Products
 - As a **customer**, I want to see pictures of each bread product so that I can make an informed decision.
 
 ##### Placing a Preorder
@@ -37,25 +67,13 @@ The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usua
 ##### Admin Authentication
 - As an **admin**, I want to log in to the admin panel so that I can manage the bread preorder system.
 
-##### Managing Bread Products
-- As an **admin**, I want to create new bread products so that customers can preorder them.
-- As an **admin**, I want to update existing bread products so that I can keep the product information current.
-- As an **admin**, I want to delete bread products so that I can remove products that are no longer available.
-- As an **admin**, I want to view a list of all bread products so that I can manage them effectively.
-
 ##### Managing Preorders
 - As an **admin**, I want to view all preorders so that I can ensure they are fulfilled correctly.
 - As an **admin**, I want to update the status of preorders so that customers are informed about their order status.
 
-### Functional Requirements
-
-#### User Registration and Authentication
-- Implement user registration and login functionality using REST framework for backend authentication.
-- Use React for the frontend to create forms for registration and login.
+### Functional Requirements - Phase 2
 
 #### Bread Product Management
-- Implement CRUD (Create, Read, Update, Delete) operations for bread products in the backend using REST framework.
-- Use React to create an admin interface for managing bread products.
 - Include image upload functionality for bread products.
 
 #### Preorder Functionality
@@ -72,6 +90,7 @@ The hofpfisterei is a traditional bread business based in Bavaria, Germany. Usua
 ### Tasks and Planning
 
 Tasks and planning can be seen in the [Bread Preorder System - GitHub Project](https://github.com/users/diegocardenast/projects/7).
+
 
 ### Colour
 
