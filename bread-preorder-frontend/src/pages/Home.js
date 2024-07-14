@@ -5,6 +5,8 @@ import indexImage from "../assets/indexImage.jpg";
 import styles from "../styles/Home.module.css";
 import { useCurrentUser } from "../context/CurrentUserContext";
 
+
+//Homepage
 const Home = () => {
   const currentUser = useCurrentUser();
 
@@ -25,15 +27,15 @@ const Home = () => {
             Welcome to our bread preorder system. Order your fresh bread online
             and pick it up at your convenience.
           </p>
-          {currentUser ? (
+          {currentUser ? ( // logic to show the bread button if logged in 
             <Button
               as={Link}
-              to="/preorder"
+              to="/products"
               variant="primary"
               size="lg"
               className={styles.btn}
             >
-              Preorder Now
+              Breads
             </Button>
           ) : (
             <p></p>
