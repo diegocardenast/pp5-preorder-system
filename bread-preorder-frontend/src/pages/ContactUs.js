@@ -3,6 +3,7 @@ import { Form, Button, Container, Alert } from 'react-bootstrap';
 import axios from 'axios';
 
 
+// Contact form 
 const ContactUs = () => {
     const [form, setForm] = useState({ 
         name: '', 
