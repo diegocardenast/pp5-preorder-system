@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
+import ManageProductsStyle from "../styles/ManageProducts.module.css";
 import axios from "axios";
 
+
+//Edit products page - Admin function
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const [show, setShow] = useState(false);
@@ -81,49 +84,51 @@ const ManageProducts = () => {
   };
 
   return (
-    <div className="manage-products">
+    <div className={ManageProductsStyle}>
       <h2>Manage Products</h2>
       <Button variant="primary" onClick={() => handleShow()}>
         Add Product
       </Button>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Can Be Sliced</th>
-            <th>Can Be In Quarters</th>
-            <th>Price</th>
-            <th>Price per Kilogram</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td>{product.canBeSliced ? "Yes" : "No"}</td>
-              <td>{product.canBeInQuarters ? "Yes" : "No"}</td>
-              <td>{product.price}</td>
-              <td>{product.pricePerKilogram}</td>
-              <td>
-                <Button variant="warning" onClick={() => handleShow(product)}>
-                  Edit
-                </Button>
-                <Button
-                  variant="danger"
-                  onClick={() => handleDelete(product.id)}
-                >
-                  Delete
-                </Button>
-              </td>
+      <div className={ManageProductsStyle.responsiveTable}>
+        <Table striped bordered hover className={ManageProductsStyle.tableContent}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Can Be Sliced</th>
+              <th>Can Be In Quarters</th>
+              <th>Price</th>
+              <th>Price per Kilogram</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-
-      <Modal show={show} onHide={handleClose}>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <tr key={product.id}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>{product.canBeSliced ? "Yes" : "No"}</td>
+                <td>{product.canBeInQuarters ? "Yes" : "No"}</td>
+                <td>{product.price}</td>
+                <td>{product.pricePerKilogram}</td>
+                <td>
+                  <Button variant="warning" onClick={() => handleShow(product)}>
+                    Edit
+                  </Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => handleDelete(product.id)}
+                  >
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+      
+      <Modal show={show} onHide={handleClose}> 
         <Modal.Header closeButton>
           <Modal.Title>{form.id ? "Edit Product" : "Add Product"}</Modal.Title>
         </Modal.Header>

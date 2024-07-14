@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
+import ProductsStyle from "../styles/Products.module.css";
 import axios from "axios";
 
+
+// Bread products page for users
 const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const handleMount = async () => {
       try {
-        console.log("before fetchind data from backend");
+        console.log("before fetching data from backend");
         axios.get("bread/").then((res) => {
           console.log(res);
           setProducts(res.data.results);
@@ -23,9 +26,10 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="manage-products">
+    <div className={ProductsStyle}>
       <h2>Products</h2>
-      <Table striped bordered hover>
+      <div className={ProductsStyle.responsiveTable}></div>
+      <Table striped bordered hover className={ProductsStyle.tableContent}>
         <thead>
           <tr>
             <th>Name</th>

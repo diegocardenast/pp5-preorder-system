@@ -5,6 +5,8 @@ import axios from "axios";
 import styles from "../styles/Login.module.css";
 import { useSetCurrentUser } from "../context/CurrentUserContext";
 
+
+// Login page
 function LoginForm() {
   const setCurrentUser = useSetCurrentUser();
 

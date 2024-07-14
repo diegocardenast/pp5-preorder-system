@@ -9,6 +9,7 @@ import {
 import styles from '../styles/Register.module.css';
 import axios from "axios";
 
+
 // User register form
 const Register = () => {
     const [registerData, setRegisterData] = useState({ 

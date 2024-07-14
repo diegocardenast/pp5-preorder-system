@@ -13,10 +13,10 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
 import ContactUs from "./pages/ContactUs";
-import YourOrders from "./pages/YourOrders";
 import ManageProducts from "./pages/ManageProducts";
-import ManageSellingPoints from "./pages/ManageSellingPoints";
 
+
+// App function with all the routes to the differen pages
 function App() {
   return (
     <div className={styles.App}>
@@ -29,17 +29,7 @@ function App() {
           <Route exact path="/products" render={() => <Breads />} />
           <Route exact path="/account" render={() => <Account />} />
           <Route exact path="/contact" render={() => <ContactUs />} />
-          <Route exact path="/orders" render={() => <YourOrders />} />
-          <Route
-            exact
-            path="/manage-products"
-            render={() => <ManageProducts />}
-          />
-          <Route
-            exact
-            path="/manage-selling-points"
-            render={() => <ManageSellingPoints />}
-          />
+          <Route exact path="/manage-products" render={() => <ManageProducts />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import useClickOutsideToggle from "../hook/useClickOutsideToggle";
 
+
 const NavBar = () => {
   // This function renders the Navbar of the App
   const currentUser = useCurrentUser();
@@ -31,14 +32,6 @@ const NavBar = () => {
     <>
       <Nav.Link as={Link} to="/manage-products" className={styles.navOptions}>
         <i className="fa-solid fa-pen-to-square"></i>Edit Products
-      </Nav.Link>
-
-      <Nav.Link
-        as={Link}
-        to="/manage-selling-points"
-        className={styles.navOptions}
-      >
-        <i className="fa-solid fa-store"></i>Stores
       </Nav.Link>
 
       <Nav.Link as={Link} to="/account" className={styles.navOptions}>
