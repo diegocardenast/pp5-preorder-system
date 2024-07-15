@@ -19,16 +19,31 @@ This project will be separated in two phases. The first one will have accounts a
 ##### User Registration and Login
 - As a **customer**, I want to create an account so that I can log in.
 
+![Registration](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/registration.png)
+
+![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/login.png)
+
 ##### Browsing Bread Products
 - As a **customer**, I want to browse a list of bread products so that I can choose which bread to preorder.
+
+![BreadList](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/userBreadList.png)
 
 #### As an Admin
 
 ##### Managing Bread Products
 - As an **admin**, I want to create new bread products so that customers can preorder them.
+![CreateBread](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/addBread.png)
+
 - As an **admin**, I want to update existing bread products so that I can keep the product information current.
+![EditBread](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/updateBread.png)
+
 - As an **admin**, I want to delete bread products so that I can remove products that are no longer available.
+![DeleteBreadBefore](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/deleteBread.png)
+
+![DeleteBreadAfter](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/deleteBread2.png)
+
 - As an **admin**, I want to view a list of all bread products so that I can manage them effectively.
+![AdminBreadList](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/adminBreadList.png)
 
 ### Functional Requirements - Phase 1
 
@@ -39,6 +54,8 @@ This project will be separated in two phases. The first one will have accounts a
 #### Bread Product Management
 - Implement CRUD (Create, Read, Update, Delete) operations for bread products in the backend using REST framework.
 - Use React to create an admin interface for managing bread products.
+
+![AdminBreadList](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/adminBreadList.png)
 
 
 ### User Stories - Phase 2
@@ -89,14 +106,22 @@ This project will be separated in two phases. The first one will have accounts a
 
 ### Tasks and Planning
 
-Tasks and planning can be seen in the [Bread Preorder System - GitHub Project](https://github.com/users/diegocardenast/projects/7).
+Tasks and planning can be seen in the [Bread Preorder System - GitHub Project (click here)](https://github.com/users/diegocardenast/projects/7).
 
 
 ### Colour
 
 The colour selection was generated from the company website: [Hofpfisterei website](https://www.hofpfisterei.de/). The main HEX code is [#596eb1](https://g.co/kgs/E5BdCuk).
 
-## Database Model
+## Database Model - Phase 1
+
+The Database scope for phase 1 considers the userstories created and covered for this phase of the project.
+
+![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQLpp5-phase1.png)
+
+## Database Model - Phase 2
+
+The Database scope for phase 2 considers the userstories created and covered for the 1st and 2nd phase of the project.
 
 ![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQLpp5.png)
 
@@ -113,27 +138,6 @@ __Bread Order__
 __Login__  
 
 ![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/loginWireframe.png)
-
-## Features
-
-__Register__
-
-![Register](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/registerFeature.png)
-
-__Contact Us__
-
-![ContactUs](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/ContactUsFeature.png)
-
-__Preorder Details__ 
-
-![PreorderDetails](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/preorderDetails.png)
-
-__CRUD Functionality__ 
-
-![AddProduct](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/AddProduct.png)
-
-![EditDeleteProduct](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/EditDeleteProduct.png)
-
 
 ## Testing
 
@@ -248,8 +252,6 @@ Diego Cárdenas
 ## PP5 - ADVFE :
 
 ### BACKEND :
-- [ ] All deployment steps
-- [ ] Thoroughly document manual testing
 - [ ] Data schema
 
 ### FRONTEND :
