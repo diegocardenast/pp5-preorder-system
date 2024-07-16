@@ -233,7 +233,7 @@ Product list | Visualize the product list as a normal user | interface will rend
 - Ensure your application has a CLIENT_ORGIN key and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end
 
 
-The live link can be found [HERE]()
+The live link can be found [HERE](https://pp5-bread-preorder-system-1d13313c4a59.herokuapp.com/)
 
 --- 
 
@@ -256,15 +256,6 @@ The live link can be found [HERE]()
 - The Database model was created using [DrawSQL](https://drawsql.app/)
 
 
-
-
 Thank You!
 
 Diego Cárdenas 
-
-
-### FRONTEND :
-- [ ] All deployment steps
-- [ ] Thoroughly document manual testing
-
---- 
