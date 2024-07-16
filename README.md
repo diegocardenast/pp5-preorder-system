@@ -168,11 +168,6 @@ JSON web token (JWT) is a compact, URL-safe means of representing claims to be t
   - No errors were returned when passing through the official [pep8ci validator](https://pep8ci.herokuapp.com/)  
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
-- CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
-- Lighthouse
-  - The result given by the system for the lighthouse assessment is the following:
-![Lighthouse results](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/lighthouse-test.png)
 
 ### Manual Testing
 **TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
@@ -227,7 +222,7 @@ Product list | Visualize the product list as a normal user | interface will rend
           extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
           CORS_ALLOWED_ORIGIN_REGEXES = [
               rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-          ] ```
+          ]
 - Go to Settings and open the Config Vars
 - Ensure your application has an ALLOWED_HOST key, set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end
 - Ensure your application has a CLIENT_ORGIN key and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end
