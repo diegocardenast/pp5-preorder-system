@@ -211,6 +211,12 @@ Product list | Visualize the product list as a normal user | interface will rend
 ### Frontend (React)
 - Set-Up React in the main folder running **"npx create-react-app bread-preorder-frontend"**. Afterwards, enter  **"cd bread-preorder-frontend"** and then run **"npm install axios react-router-dom"**
 - Install react-bootstrap **"npm install react-bootstrap bootstrap"**
+- cd into the frontend directory
+- run npm run build && mv build ../staticfiles/.
+- In the root directory of your project, create a new file named runtime.txt and add python-3.12.4 as text
+- In your env.py file, ensure that both the DEBUG and DEV environment variables are commented out
+- Run the Django server, in the terminal type
+- Open the preview on port 8000 to check that your application is running. The React server should not be running. This is a test to check that Django is serving the React static files.
 - 
 
 
