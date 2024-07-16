@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import React,  { useState } from "react";
+import { Container, Form, Button, Alert } from "react-bootstrap";
 import {
   useCurrentUser,
   useSetCurrentUser,
@@ -12,6 +12,10 @@ const Account = () => {
   const currentUser = useCurrentUser();
   const setUser = useSetCurrentUser();
   const history = useHistory();
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertVariant, setAlertVariant] = useState('success');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,15 +32,22 @@ const Account = () => {
       delete payload.last_login;
       console.log(payload);
       await axios.patch(`dj-rest-auth/user/`, payload);
+      setAlertMessage('Update successful!');
+      setAlertVariant('success');
       history.push("/");
     } catch (error) {
       console.error(error);
+      setAlertMessage('An error occurred. Please try again.');
+      setAlertVariant('danger');
     }
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 5000);
   };
 
   return (
     <Container>
       <h2>Your Account</h2>
+      {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formUserName">
           <Form.Label>Username</Form.Label>

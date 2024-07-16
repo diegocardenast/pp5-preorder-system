@@ -9,6 +9,9 @@ import { useSetCurrentUser } from "../context/CurrentUserContext";
 // Login page
 function LoginForm() {
   const setCurrentUser = useSetCurrentUser();
+  const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertVariant, setAlertVariant] = useState('success');
 
   const [loginData, setLoginData] = useState({
     username: "acmantilla29",
@@ -24,10 +27,16 @@ function LoginForm() {
     try {
       const { data } = await axios.post("dj-rest-auth/login/", loginData);
       setCurrentUser(data.user);
+      setAlertMessage('Login successfull!');
+      setAlertVariant('success');
       history.push("/");
     } catch (err) {
       setErrors(err.response?.data);
+      setAlertMessage('An error occurred. Please try again.');
+      setAlertVariant('danger');
     }
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 5000);
   };
 
   const handleChange = (e) => {
@@ -36,6 +45,8 @@ function LoginForm() {
 
   return (
     <Container>
+      <h2>Login</h2>
+      {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="username">
           <Form.Label className={styles.text}>Username</Form.Label>

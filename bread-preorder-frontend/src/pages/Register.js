@@ -21,6 +21,10 @@ const Register = () => {
 
     const { username, email, password1, password2 } = registerData;
 
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertVariant, setAlertVariant] = useState('success');
+
     const [errors, setErrors] = useState({});
 
     const history = useHistory();
@@ -36,15 +40,22 @@ const Register = () => {
         e.preventDefault();
         try {
             await axios.post('/api/dj-rest-auth/registration/', registerData)
+            setAlertMessage('Registration successful!');
+            setAlertVariant('success');
             history.push('/login');
         } catch(err){
+            setAlertMessage('An error occurred. Please try again.');
+            setAlertVariant('danger');
             setErrors(err.response?.data);
         }
-        
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 5000);
     };
 
     return (
         <Container>
+            <h2>Register</h2>
+            {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="username">
                     <Form.Label className={styles.text} >Username</Form.Label>

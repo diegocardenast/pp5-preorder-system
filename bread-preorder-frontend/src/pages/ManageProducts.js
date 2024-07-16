@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Button, Modal, Form } from "react-bootstrap";
+import { Table, Button, Modal, Form, Alert } from "react-bootstrap";
 import ManageProductsStyle from "../styles/ManageProducts.module.css";
 import axios from "axios";
 
@@ -16,6 +16,10 @@ const ManageProducts = () => {
     price: "",
     pricePerKilogram: "",
   });
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertVariant, setAlertVariant] = useState('success');
 
   // Fetch the Products
   useEffect(() => {
@@ -63,29 +67,44 @@ const ManageProducts = () => {
     e.preventDefault();
     try {
       if (form.id) {
-        await axios.put(`bread/edit/${form.id}/`, form);
+        await axios.put(`bread/edit/${form.id}/`, form); // Edition request
+        setAlertMessage('Update successful!');
+        setAlertVariant('success');
       } else {
-        await axios.post("bread/create/", form);
+        await axios.post("bread/create/", form); // Creation request
+        setAlertMessage('New product added!');
+        setAlertVariant('success');
       }
       fetchProducts();
       handleClose();
     } catch (error) {
+      setAlertMessage('An error occurred. Please try again.');
+      setAlertVariant('danger');
       console.error(error);
     }
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 5000);
   };
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`bread/edit/${id}/`);
+      await axios.delete(`bread/edit/${id}/`); // Deletion request
       fetchProducts();
+      setAlertMessage('Successfully Deleted!');
+      setAlertVariant('success');
     } catch (error) {
       console.error(error);
+      setAlertMessage('An error occurred. Please try again.');
+      setAlertVariant('danger');
     }
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 5000);
   };
 
   return (
     <div className={ManageProductsStyle}>
       <h2>Manage Products</h2>
+      {showAlert && <Alert variant={alertVariant}>{alertMessage}</Alert>}
       <Button variant="primary" onClick={() => handleShow()}>
         Add Product
       </Button>
