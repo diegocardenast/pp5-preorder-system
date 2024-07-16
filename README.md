@@ -178,10 +178,10 @@ JSON web token (JWT) is a compact, URL-safe means of representing claims to be t
 **TEST** | **ACTION** | **EXPECTATION** | **RESULT** 
 ----------|----------|----------|----------
 Index | Size to 320px using Chrome Dev Tools	| Elements look good @ 320px | Works as expected
-Index | Size to 1920px using Chrome Dev Tools | Elements look good 1920px | Works as expected
-Login | Login with an admin account	| Notify user about succesfful login and show admin settings options | Works as expected
-Logout | Logout from an admin account | Notify user about succesfful logout and hide admin settings options | Works as expected
-Login | Login with a normal account	| Notify user about succesfful login and show products list options | Works as expected
+Index | Size to 1440px using Chrome Dev Tools | Elements look good 1440px | Works as expected
+Login | Login with an admin account	| Notify user with name in navbar and show admin options | Works as expected
+Logout | Logout from an admin account and normal account | Notify user taking out name in navbar and changing nav options | Works as expected
+Login | Login with a normal account	| Notify user with name in navbar and show admin options | Works as expected
 Logout | Login from a normal account | Notify user about succesfful logout and hide products list options | Works as expected
 Register | Allow users logged out to register into the platform | Form is saved into admin DB | Works as expected
 Contact us | Fill out contact us form with questions | Form information will be saved into the admin DB | Works as expected
@@ -189,9 +189,7 @@ Admin settings | Create and erase a user from the admin panel with an admin acco
 Add Product | Create a product | admin DB will work correctly based on CRUD principles | Works as expected
 Edit Product | Update a product | admin DB will work correctly based on CRUD principles | Works as expected
 Delete Product | Delete a product | admin DB will work correctly based on CRUD principles | Works as expected
-Price list | Visualize the product list as a normal user | interface will render admin DB products correctly | Works as expected
-Price list | Visualize a product detail page as a normal user | interface will render admin DB information correctly | Works as expected
-
+Product list | Visualize the product list as a normal user | interface will render admin DB products correctly | Works as expected
 
 
 ### Unfixed Bugs
@@ -213,6 +211,7 @@ Price list | Visualize a product detail page as a normal user | interface will r
 ### Frontend (React)
 - Set-Up React in the main folder running **"npx create-react-app bread-preorder-frontend"**. Afterwards, enter  **"cd bread-preorder-frontend"** and then run **"npm install axios react-router-dom"**
 - Install react-bootstrap **"npm install react-bootstrap bootstrap"**
+- 
 
 
 
@@ -252,7 +251,8 @@ The live link can be found [HERE]()
 - Inspiration of the [institutional color](https://www.hofpfisterei.de/)
 - The use of GitHub to collaborate and apply good practices was implemented following this [Slack post](https://code-institute-room.slack.com/archives/C05UQAPDNCT/p1697457705802579) and this [GitHub post](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md)
 - Troubleshooting with [stack overflow](https://stackoverflow.com/)
--JWT library explanation inside [builtin.com](https://builtin.com/articles/jwt-decode)
+- JWT library explanation inside [builtin.com](https://builtin.com/articles/jwt-decode)
+- React components and architecture inside [etatvasoft.com](https://www.etatvasoft.com/blog/react-architecture-patterns/)
 
 ### Media
 
