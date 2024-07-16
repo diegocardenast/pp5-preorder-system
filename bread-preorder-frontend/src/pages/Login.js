@@ -14,8 +14,8 @@ function LoginForm() {
     const [alertVariant, setAlertVariant] = useState('success');
 
   const [loginData, setLoginData] = useState({
-    username: "acmantilla29",
-    password: "Diego3751@",
+    username: "",
+    password: "",
   });
   const { username, password } = loginData;
 

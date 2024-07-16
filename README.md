@@ -104,11 +104,6 @@ This project will be separated in two phases. The first one will have accounts a
 - Provide options for customers to specify if they want their bread sliced or unsliced and to choose the quantity (quarter, half, three-quarters, or whole).
 
 
-### Tasks and Planning
-
-Tasks and planning can be seen in the [Bread Preorder System - GitHub Project (click here)](https://github.com/users/diegocardenast/projects/7).
-
-
 ### Colour
 
 The colour selection was generated from the company website: [Hofpfisterei website](https://www.hofpfisterei.de/). The main HEX code is [#596eb1](https://g.co/kgs/E5BdCuk).
@@ -138,6 +133,32 @@ __Bread Order__
 __Login__  
 
 ![Login](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/loginWireframe.png)
+
+## Tasks and Planning (GitHub Projects)
+
+Tasks and planning can be seen in the [Bread Preorder System - GitHub Project (click here)](https://github.com/users/diegocardenast/projects/7).
+
+## Use of React Components
+
+### Hook
+The use of Hooks enable you to extract logic into reusable functions and improve code readability. An example of this is the useClickOutsideToggle.js file which helps our collapsed navbar to hide once the user has clicked one of the nav options or outside the navbar.
+
+### Directory layout
+It’s more necessary to maintain a clean structure that’s easy to grasp by everyone in the codebase than to make the directory title an impermeable guideline. The react app structure can be seen in the folder bread-preorder-frontend.
+
+### Context
+With React Context tool, you can transmit information up and down the component tree without resorting to prop drilling. It’s a different strategy that allows a parent component to prop up the complete child tree. The file CurrentUserContext.js is an example of this react component. 
+
+## Use of Libraries
+
+### Axios
+Axios, which is a popular library is mainly used to send asynchronous HTTP requests to REST endpoints. This library is very useful to perform CRUD operations. 
+
+### React Bootstrap
+React-Bootstrap is a complete re-implementation of the Bootstrap components using React. It has no dependency on either bootstrap.js or jQuery. If you have React setup and React-Bootstrap installed, you have everything you need.
+
+### JWT-Decode
+JSON web token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON web signature (JWS) structure or as the plaintext of a JSON web encryption (JWE) structure.
 
 ## Testing
 
@@ -231,6 +252,7 @@ The live link can be found [HERE]()
 - Inspiration of the [institutional color](https://www.hofpfisterei.de/)
 - The use of GitHub to collaborate and apply good practices was implemented following this [Slack post](https://code-institute-room.slack.com/archives/C05UQAPDNCT/p1697457705802579) and this [GitHub post](https://github.com/auxfuse/hackathon-git-labs/blob/main/basic.md)
 - Troubleshooting with [stack overflow](https://stackoverflow.com/)
+-JWT library explanation inside [builtin.com](https://builtin.com/articles/jwt-decode)
 
 ### Media
 
@@ -244,19 +266,9 @@ Thank You!
 
 Diego Cárdenas 
 
-# README REQUIREMENTS :
-
-- [README formatter](https://stackedit.io/app#) : very useful tool
-
-
-## PP5 - ADVFE :
-
-### BACKEND :
-- [ ] Data schema
 
 ### FRONTEND :
 - [ ] All deployment steps
-- [ ] Document reuse of React components to demonstrate understanding
 - [ ] Thoroughly document manual testing
 
 --- 
