@@ -117,7 +117,7 @@ The colour selection was generated from the company website: [Hofpfisterei websi
 
 The Database scope for phase 1 considers the userstories created and covered for this phase of the project.
 
-![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQLpp5-phase1.png)
+![Database Model](https://github.com/diegocardenast/pp5-preorder-system/blob/main/assets/images/drawSQL-pp5-phase1.png)
 
 ## Database Model - Phase 2
 
