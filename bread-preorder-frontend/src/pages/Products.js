@@ -26,9 +26,8 @@ const Products = () => {
   }, []);
 
   return (
-    <div className={ProductsStyle}>
+    <div className={ProductsStyle.responsiveTable}>
       <h2>Products</h2>
-      <div className={ProductsStyle.responsiveTable}></div>
       <Table striped bordered hover className={ProductsStyle.tableContent}>
         <thead>
           <tr>

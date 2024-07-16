@@ -32,11 +32,7 @@ urlpatterns = [
     path("api/dj-rest-auth/", include("dj_rest_auth.urls")),
     path("api/dj-rest-auth/registration/", include("dj_rest_auth.registration.urls")),
     path("api/bread/", include("bread.urls")),
-    path("api/", include("sellingPoint.urls")),
     path("api/contactUs/", include("contactUs.urls")),
-    # path('api/', include('userProfile.urls')),
-    # path('api/', include('orderedBread.urls')),
-    # path('api/', include('preorder.urls')),
 ]
 
 handler404 = TemplateView.as_view(template_name="index.html")

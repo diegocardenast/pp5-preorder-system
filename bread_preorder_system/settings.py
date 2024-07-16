@@ -30,6 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
+# Users Email verification
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # AUTHENTICATION setup
 
 REST_FRAMEWORK = {
@@ -62,7 +65,9 @@ REST_AUTH_SERIALIZERS = {
 REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'my-app-author',
-    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-tokenizer',    
+    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-tokenizer',
+    'REGISTER_SERIALIZER': 'dj_rest_auth.registration.serializers.RegisterSerializer',
+    'REGISTER_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),    
 }
 
 
