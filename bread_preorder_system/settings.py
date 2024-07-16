@@ -85,6 +85,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "8000-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net",
     "8080-diegocarden-pp5preorder-01sol8fjcbf.ws.codeinstitute-ide.net",
+    "pp5-bread-preorder-system-1d13313c4a59.herokuapp.com",
     os.environ.get("ALLOWED_HOST"),
 ]
 

@@ -217,31 +217,21 @@ Product list | Visualize the product list as a normal user | interface will rend
 - In your env.py file, ensure that both the DEBUG and DEV environment variables are commented out
 - Run the Django server, in the terminal type
 - Open the preview on port 8000 to check that your application is running. The React server should not be running. This is a test to check that Django is serving the React static files.
-- 
+- In settings.py, in the ALLOWED_HOSTS list, copy your ‘... .herokuapp.com’ string.
+- Log in to heroku.com and select your API application, Click “settings” and Click “Reveal config vars”
+- Add the new key of ALLOWED_HOST with the value for your deployed Heroku application URL that we copied from settings.py
+- When the CLIENT_ORIGIN_DEV environment variable is defined, the unique part of your gitpod preview URL is extracted. b) It is then included in the regular expression provided by us so that the gitpod workspace is still connected to our API when gitpod rotates the workspace URL.
+- Import the regular expression module at the top of your settings.py file. We will need this to manipulate the CLIENT_ORIGIN_DEV URL string. import re
+- Replace the else statement and body for if 'CLIENT_ORIGIN' in os.environ: with the following code:
+    ``` if 'CLIENT_ORIGIN_DEV' in os.environ:
+          extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+          CORS_ALLOWED_ORIGIN_REGEXES = [
+              rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+          ] ```
+- Go to Settings and open the Config Vars
+- Ensure your application has an ALLOWED_HOST key, set to the URL of your combined project, remove the https:// at the beginning and remove the trailing slash at the end
+- Ensure your application has a CLIENT_ORGIN key and set it to the URL of your combined project. This time keep the https:// at the beginning but remove the trailing slash at the end
 
-
-
-
-
-- The site was deployed in the Heroku. The steps to deploy are as follows: 
-  - Install the **Django Python package** by running in the Gitpod terminal **"pip3 install Django~=4.2.1"**
-  - Update the requirements file by running in the Gitpod terminal **"pip3 freeze > requirements.txt"**
-  - Push the latest changes to the GitHub repository 
-  - Run in the Gitpod terminal **"django-admin startproject my_project ."** to create a Django project. In this case, my_project is called **plastilecor_portal**
-  - Add the **ALLOWED_HOSTS** (in this case '8000-diegocarden-pp4plastile-dl4pq8wxrog.ws-eu108.gitpod.io') into **plastilecor_portal/settings.py** file
-  - Push the latest changes to the GitHub repository
-  - Create Django Apps and Views, as well as configure settings.py
-  - Push the latest changes to the GitHub repository
-  - Inside the Heroku account, create a new app with a unique name (in this case **project-plastilecor-portal**)
-  - Install a production-ready webserver for Heroku running this command inside the gitpod terminal **pip3 install gunicorn~=20.1**
-  - Add **gunicorn==20.1.0** to the **requirements.txt** file with the following command **pip3 freeze --local > requirements.txt**
-  - Inside the Heroku app settings tab, create a _Config Var_ called `PORT`. Set this to `8000`
-  - Inside the Heroku app settings tab, add two buildpacks:
-    - `heroku/python`
-    - `heroku/nodejs`
-  - Inside the Heroku app deploy tab, select GitHub as deployment method and connect the GitHub repository to the Heroku app
-  - Inside the Heroku app deploy tab, click on deploy branch
-  - Click on View App
 
 The live link can be found [HERE]()
 
